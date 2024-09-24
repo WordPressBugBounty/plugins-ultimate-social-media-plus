@@ -693,6 +693,19 @@ function sfsi_plus_pinterest_modal(imgs) {
     );
 }
 
+function showSuccessAlert() {
+    var alert = document.getElementById("success-alert");
+    alert.style.display = "block";
+    alert.style.animation = "intro-animation 1s";
+
+    setTimeout(function() {
+        alert.style.animation = "fade-out 2s";
+        setTimeout(function() {
+            alert.style.display = "none";
+            alert.style.animation = "none"; // Reset the animation
+        }, 2000); // Adjust the timing to match the fade-out animation duration
+    }, 3000); // Show the alert for 3 seconds (you can adjust the timing)
+}
 
 /* Copy link */
 function sfsi_copyLink(text) {
@@ -709,5 +722,6 @@ document.querySelectorAll('a.sfsi_copylinksficn1').forEach(function (anchor) {
     anchor.addEventListener('click', function () {
         var page = window.location.href.replace(/#.*$/, '')
         sfsi_copyLink(page);
+        showSuccessAlert();
     });
 });

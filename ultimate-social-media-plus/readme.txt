@@ -2,8 +2,8 @@
 Contributors: socialsharepro, socialtech
 Tags: Share, sharing, share buttons, share button, share social media
 Requires at least: 3.0
-Tested up to: 6.6
-Stable tag: 3.6.6
+Tested up to: 6.6.2
+Stable tag: 3.6.7
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -298,6 +298,12 @@ The premium plugin offrs many more social buttons from other social media platfo
 
 == Changelog ==
 
+= 3.6.7 =
+* Tested with WordPress 6.6.2
+* Aligned new icons for desktop (Copy URL, InHa, RIA)
+* Added necessary issets to add better backward compatibility
+* Slight PHP 8 compatibility improvement
+
 = 3.6.6 =
 * Tested with WordPress 6.6
 * Minor performance improvements 
@@ -490,8 +496,8 @@ The premium plugin offrs many more social buttons from other social media platfo
 
 == Upgrade Notice ==
 
-= 3.6.6 =
-* Tested with WordPress 6.6
-* Minor performance improvements 
-* Improvements for PHP 8 utilization
-* Fixed bugs with IncreasingHappiness and RateItAll icons
+= 3.6.7 =
+* Tested with WordPress 6.6.2
+* Aligned new icons for desktop (Copy URL, InHa, RIA)
+* Added necessary issets to add better backward compatibility
+* Slight PHP 8 compatibility improvement

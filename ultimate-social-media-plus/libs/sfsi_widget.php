@@ -455,6 +455,8 @@ class Sfsi_Plus_Widget extends WP_Widget
 			$alt_text = '';
 			$new_window = '';
 			$class = '';
+			$extra_html = '';
+
 			/* access  all saved settings in admin */
 			$sfsi_plus_section1_options = maybe_unserialize(get_option('sfsi_plus_section1_options', false));
 			$sfsi_plus_section2_options = maybe_unserialize(get_option('sfsi_plus_section2_options', false));
@@ -1500,6 +1502,8 @@ class Sfsi_Plus_Widget extends WP_Widget
 						}
 					}
 
+					$extra_html .= '<div id="success-alert" class="success-alert">' . __('URL has been copied successfully!', 'ultimate-social-media-plus') . '</div>';
+
 					break;
 
 				case "mastodon":
@@ -1745,6 +1749,10 @@ class Sfsi_Plus_Widget extends WP_Widget
 				}
 				$icons .= "</div>";
 				$icons .= "</div>";
+
+				if(isset($extra_html)) {
+					$icons .= $extra_html;
+				}
 			}
 			return  $icons;
 		}
