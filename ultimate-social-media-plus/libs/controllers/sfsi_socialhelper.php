@@ -206,14 +206,38 @@ class sfsi_plus_SocialHelper
 	}
 
 
-	/* get pinit counts  */       
-	function sfsi_get_pinterest($url)
-	{
-		$return_data = $this->file_get_contents_curl('https://api.pinterest.com/v1/urls/count.json?callback=receiveCount&url='.$url);
-		$json_string = preg_replace('/^receiveCount\((.*)\)$/', "\\1", $return_data);
-		$json = json_decode($json_string, true);
-		return isset($json['count'])?intval($json['count']):0;
-	}
+	/* get pinit counts  */
+    /**
+     * Get pinit counts for a given URL
+     *
+     * @param string $url The URL to retrieve the pinit count for
+     * @return int The number of pinit counts for the given URL
+     */
+    function sfsi_get_pinterest($url)
+    {
+        if (is_admin()) {
+            return 0;
+        }
+
+        $api_url = 'https://api.pinterest.com/v1/urls/count.json?callback=receiveCount&url=' . urlencode($url);
+
+        $response = wp_remote_get($api_url, array(
+            'timeout' => 15,
+        ));
+
+        if (is_wp_error($response)) {
+            return 0;
+        }
+
+        $body = wp_remote_retrieve_body($response);
+
+        // Remove the callback function name from the response
+        $json_string = preg_replace('/^receiveCount\((.*)\)$/', "\\1", $body);
+
+        $json = json_decode($json_string, true);
+
+        return isset($json['count']) ? intval($json['count']) : 0;
+    }
 
 	/* get pinit counts for a user  */
 	function get_UsersPins($user_name,$board)
@@ -408,7 +432,7 @@ class sfsi_plus_SocialHelper
 
 
 		$twitter_html = "<div class='sf_twiter' style='display: inline-block;vertical-align: middle;width: auto;'>
-						<a target='_blank' href='https://twitter.com/intent/tweet?text=" . urlencode($tweettext).' '.$permalink. "'style='display:inline-block' >
+						<a target='_blank' href='https://x.com/intent/post?text=" . urlencode($tweettext).' '.$permalink. "'style='display:inline-block' >
 							<img nopin=nopin width='auto' class='sfsi_plus_wicon' src='" . $tweet_icon . "' alt='Tweet' title='Tweet' >
 						</a>
 					</div>";
@@ -416,7 +440,7 @@ class sfsi_plus_SocialHelper
 		// if(empty($tweettext)){
 		// 	$tweettext = "&nbsp";
 		// }
-		// $twitter_html = '<a rel="nofollow" href="https://twitter.com/intent/tweet" data-count="none" class="sr-twitter-button twitter-share-button" data-lang="'.$icons_language.'" data-url="'.$permalink.'" data-text="'.stripslashes($tweettext).'" ></a>';
+		// $twitter_html = '<a rel="nofollow" href="https://x.com/intent/post" data-count="none" class="sr-twitter-button twitter-share-button" data-lang="'.$icons_language.'" data-url="'.$permalink.'" data-text="'.stripslashes($tweettext).'" ></a>';
         //  return $twitter_html;
 	}
 	
@@ -425,57 +449,33 @@ class sfsi_plus_SocialHelper
 	{
 		if($show_count)
 		{
-			$twitter_html = '<a href="https://twitter.com/intent/tweet" class="sr-twitter-button twitter-share-button" lang="'.$icons_language.'" data-counturl="'.$permalink.'" data-url="'.$permalink.'" data-text="'.stripslashes($tweettext).'" ></a>';
+			$twitter_html = '<a href="https://x.com/intent/post" class="sr-twitter-button twitter-share-button" lang="'.$icons_language.'" data-counturl="'.$permalink.'" data-url="'.$permalink.'" data-text="'.stripslashes($tweettext).'" ></a>';
 		}
 		else
 		{
-			$twitter_html = '<a href="https://twitter.com/intent/tweet" data-count="none" class="sr-twitter-button twitter-share-button" lang="'.$icons_language.'" data-url="'.$permalink.'" data-text="'.stripslashes($tweettext).'" ></a>';
+			$twitter_html = '<a href="https://x.com/intent/post" data-count="none" class="sr-twitter-button twitter-share-button" lang="'.$icons_language.'" data-url="'.$permalink.'" data-text="'.stripslashes($tweettext).'" ></a>';
 		}
 	   	return $twitter_html;
 	}
 	
 	/* create on page youtube subscribe icon */       
- 	public function sfsi_YouTubeSub($yuser)
+	public function sfsi_YouTubeSub($yuser)
 	{
-	 	$option2=  maybe_unserialize(get_option('sfsi_plus_section2_options',false));
-		$option4=  maybe_unserialize(get_option('sfsi_plus_section4_options',false));
-		if(isset($option2['sfsi_plus_youtubeusernameorid']))
-		{
-			$sfsi_plus_youtubeusernameorid = $option2['sfsi_plus_youtubeusernameorid'];
-			$sfsi_plus_ytube_chnlid = $option2['sfsi_plus_ytube_chnlid'];
-		}
-		elseif(isset($option4['sfsi_plus_youtubeusernameorid']))
-		{
-			$sfsi_plus_youtubeusernameorid = $option4['sfsi_plus_youtubeusernameorid'];
-			$sfsi_plus_ytube_chnlid = $option4['sfsi_plus_ytube_chnlid'];
-		}
-		else
-		{
-			$sfsi_plus_youtubeusernameorid = '';
-			$sfsi_plus_ytube_chnlid = '';
-		}
-		if($sfsi_plus_youtubeusernameorid == 'name')
-		{
-			$yuser = $option2['sfsi_plus_ytube_user'];
-			$youtube_html = '<div class="g-ytsubscribe" data-channel="'.$yuser.'" data-layout="default" data-count="hidden"></div>';
-		}
-		else
-		{
-			$yuser = $sfsi_plus_ytube_chnlid;
-			$youtube_html = '<div class="g-ytsubscribe" data-channelid="'.$yuser.'" data-layout="default" data-count="hidden"></div>';
-		}
-		return $youtube_html;
-	}  
+		$option2 = maybe_unserialize(get_option('sfsi_plus_section2_options', false));
+		$sfsi_plus_ytube_chnlid = empty($option2['sfsi_plus_ytube_chnlid']) ? '' : $option2['sfsi_plus_ytube_chnlid'];
+		$sfsi_plus_ytube_user = empty($option2['sfsi_plus_ytube_user']) ? '' : $option2['sfsi_plus_ytube_user'];
 	
-	/* create on page pinit button icon */      
-	public function sfsi_PinIt($url='')
-	{
-		$pinit_html = 'https://www.pinterest.com/pin/create/button/?url=&media=&description';
-
-		$pinit_html = "<a href='#' onclick='sfsi_plus_pinterest_modal_images(event)' style='display:inline-block;'  > <img class='sfsi_wicon'  data-pin-nopin='true' width='auto' height='auto' alt='Pin Share' title='Pin Share' src='" . SFSI_PLUS_PLUGURL . "images/share_icons/en_US_save.svg" . "'  /></a>";
-		return $pinit_html;
+		if(empty($sfsi_plus_ytube_user) && empty($sfsi_plus_ytube_chnlid)){
+			return '<div>Set Youtube Channel ID</div>';
+		}
+	
+		if(!empty($sfsi_plus_ytube_chnlid)){
+			return '<div class="g-ytsubscribe" data-channelid="' . $sfsi_plus_ytube_chnlid . '" data-layout="default" data-count="hidden"></div>';
+		}
+	
+		return '<div class="g-ytsubscribe" data-channel="' . $sfsi_plus_ytube_user . '" data-layout="default" data-count="hidden"></div>';
 	}
- 	
+
 	/* get instragram followers */
 	public function sfsi_get_instagramFollowers( $user_name ) {
 		$sfsi_plus_instagram_sf_count = maybe_unserialize( get_option( 'sfsi_plus_instagram_sf_count', false ) );
@@ -568,7 +568,7 @@ class sfsi_plus_SocialHelper
       	return  $ifollow='<script type="IN/Share" data-url="'.$url.'"></script>';
  	}
  	
-	/* get no of subscribers from specificfeeds for current blog */
+	/* get no of subscribers from specific feeds for current blog */
 	public function  SFSI_getFeedSubscriber($feedid)
 	{
 		$sfsi_plus_instagram_sf_count = maybe_unserialize(get_option('sfsi_plus_instagram_sf_count',false));

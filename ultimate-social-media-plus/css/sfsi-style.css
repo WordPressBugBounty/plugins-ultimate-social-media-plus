@@ -5142,7 +5142,7 @@ a.pop-up .radio {
     margin: 0;
 }
 
-.sfsi_plus_actvite_theme_flat .sfsiplus_inerCnt .sficn {
+.sfsi_plus_actvite_theme_flat .sfsiplus_inerCnt .sficn1, .sfsi_plus_actvite_theme_flat .sfsiplus_inerCnt .sfsi_copylinksficn1 {
     display: flex;
     border-radius: 50%;
     align-items: center;

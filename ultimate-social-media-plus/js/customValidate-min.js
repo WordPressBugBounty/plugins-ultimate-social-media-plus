@@ -13,9 +13,7 @@ function sfsi_plus_validationStep2() {
     if (SFSI(".tab2 > .sfsiplus_youtube_section").css("display") === "block") {
         if (sfsi_validator(SFSI('input[name="sfsi_plus_youtube_page"]'), "activte") && sfsi_validator(SFSI('input[name="sfsi_plus_youtube_page"]'), "checked") && !sfsi_validator(SFSI('input[name="sfsi_plus_youtube_pageUrl"]'), "blank")) return sfsiplus_showErrorSuc("error", "Error : Invalid youtube Url ", 2), SFSI('input[name="sfsi_plus_youtube_pageUrl"]').addClass("inputError"), !1;
         if (sfsi_validator(SFSI('input[name="sfsi_plus_youtube_page"]'), "activte") && sfsi_validator(SFSI('input[name="sfsi_plus_youtube_follow"]'), "checked"))
-            if ("name" == jQuery("input[name='sfsi_plus_youtubeusernameorid']:checked").val()) {
-                if (!sfsi_validator(SFSI('input[name="sfsi_plus_ytube_user"]'), "blank")) return sfsiplus_showErrorSuc("error", "Error : Invalid youtube user ", 2), SFSI('input[name="sfsi_plus_ytube_user"]').addClass("inputError"), !1
-            } else if (!sfsi_validator(SFSI('input[name="sfsi_plus_ytube_chnlid"]'), "blank")) return sfsiplus_showErrorSuc("error", "Error : Invalid youtube channel id", 2), SFSI('input[name="sfsi_plus_ytube_chnlid"]').addClass("inputError"), !1;
+        if (!sfsi_validator(SFSI('input[name="sfsi_plus_ytube_chnlid"]'), "blank")) return sfsiplus_showErrorSuc("error", "Error : Invalid youtube channel id", 2), SFSI('input[name="sfsi_plus_ytube_chnlid"]').addClass("inputError"), !1;
     }
 
     if (SFSI(".tab2 > .sfsiplus_pintrest_section").css("display") === "block") {

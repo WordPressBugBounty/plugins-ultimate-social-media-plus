@@ -463,48 +463,17 @@
                 </label>
             </p>
         	<!--Adding Code for Channel Id and Channel Name-->
-        	<?php
-				if(!isset($option2['sfsi_plus_youtubeusernameorid']))
-				{
-					$sfsi_plus_youtubeusernameorid = '';
-				}
-				else
-				{
-					$sfsi_plus_youtubeusernameorid = $option2['sfsi_plus_youtubeusernameorid'];
-				}
-			?>
-
          <div class="cstmutbewpr">
-            <ul class="enough_waffling">
-               <li onclick="showhideutube(this);"><input name="sfsi_plus_youtubeusernameorid" <?php echo ($sfsi_plus_youtubeusernameorid=='name') ? 'checked="true"' : '' ;?> type="radio" value="name" class="styled"  />
-               <label>
-               		<?php _e( 'User Name', 'ultimate-social-media-plus' ); ?>
-               </label>
-               </li>
-               <li onclick="showhideutube(this);"><input name="sfsi_plus_youtubeusernameorid" <?php echo ($sfsi_plus_youtubeusernameorid=='id') ? 'checked="true"' : '' ;?> type="radio" value="id" class="styled"  />
-               <label>
-               		<?php _e( 'Channel Id', 'ultimate-social-media-plus' ); ?>
-               </label></li>
-            </ul>
             <div class="cstmutbtxtwpr">
-            	<div class="cstmutbchnlnmewpr" <?php if($sfsi_plus_youtubeusernameorid != 'id'){echo 'style="display: block;"';}?>>
-                	<p class="extra_pp">
-                    	<label><?php _e( 'UserName:', 'ultimate-social-media-plus' ); ?></label>
-                        <input name="sfsi_plus_ytube_user" type="url" value="<?php echo (isset($option2['sfsi_plus_ytube_user']) && $option2['sfsi_plus_ytube_user']!='') ? $option2['sfsi_plus_ytube_user'] : '' ;?>" placeholder="Youtube username" class="add" />
-                    </p>
-                    <div class="utbe_instruction">
-                    	<?php _e( 'To find your User ID/Channel ID, login to your YouTube account, click the user icon at the top right corner and select "Settings", then click "Advanced" under "Name" and you will find both your "Channel ID" and "User ID" under "Account Information".', 'ultimate-social-media-plus' ); ?>
-                    </div>
-                </div>
-                <div class="cstmutbchnlidwpr" <?php if($sfsi_plus_youtubeusernameorid == 'id'){echo 'style="display: block"';}?>>
+                <div class="cstmutbchnlidwpr" style="display: block">
                 	<p class="extra_pp">
                     	<label>
                        		<?php _e( 'Channel Id:', 'ultimate-social-media-plus' ); ?>
                         </label>
-                        <input name="sfsi_plus_ytube_chnlid" type="url" value="<?php echo (isset($option2['sfsi_plus_ytube_chnlid']) && $option2['sfsi_plus_ytube_chnlid']!='') ? $option2['sfsi_plus_ytube_chnlid'] : '' ;?>" placeholder="youtube_channel_id" class="add" />
+                        <input name="sfsi_plus_ytube_chnlid" type="url" value="<?php echo (isset($option2['sfsi_plus_ytube_chnlid']) && $option2['sfsi_plus_ytube_chnlid']!='') ? $option2['sfsi_plus_ytube_chnlid'] : '' ;?>" placeholder="youtube_channel_id" class="add" style="margin-left: 112px;" />
                     </p>
                     <div class="utbe_instruction">
-                    	<?php _e( 'To find your User ID/Channel ID, login to your YouTube account, click the user icon at the top right corner and select "Settings", then click "Advanced" under "Name" and you will find both your "Channel ID" and "User ID" under "Account Information".', 'ultimate-social-media-plus' ); ?>
+                    	<?php _e('To find your Channel ID, login to your YouTube account, click the user icon at the top right corner and select "Settings" , then click "Advanced settings". Your Channel ID will be displayed there.', 'ultimate-social-media-plus'); ?>
                     </div>
                 </div>
             </div>

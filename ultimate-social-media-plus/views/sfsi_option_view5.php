@@ -667,13 +667,13 @@ $option5['sfsi_plus_inha_MouseOverText']= 	(isset($option5['sfsi_plus_inha_Mouse
 		<div class="social_data_post_types">
                 <ul class="socialPostTypesUl">
                 	<li>
-						<div class="radio_section tb_4_ck">
+						<div class="radio_section tb_4_ck disabled">
 							<input type="checkbox" <?php echo $checked; ?> value="page" class="styled"  />
 							<label class="cstmdsplsub"><?php _e("Page",'ultimate-social-media-plus'); ?></label>
 						</div>
 					</li>
                 	<li>
-						<div class="radio_section tb_4_ck">
+						<div class="radio_section tb_4_ck disabled">
 							<input type="checkbox" <?php echo $checked; ?> value="post" class="styled"  />
 							<label class="cstmdsplsub"><?php _e("Post",'ultimate-social-media-plus'); ?></label>
 						</div>

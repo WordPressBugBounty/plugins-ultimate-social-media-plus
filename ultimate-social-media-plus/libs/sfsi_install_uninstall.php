@@ -651,7 +651,7 @@ function sfsi_plus_update_plugin()
 		$option8["sfsi_plus_display_button_type"] = "standard_buttons";
 	}
 	sfsi_plus_remove_google();
-    // Add this removed in version 2.9.3, removing values from section 1 & section 6 & setting notice display value
+    // Add this removed in version 2.9.4, removing values from section 1 & section 6 & setting notice display value
     sfsi_plus_was_displaying_addthis();
     //deleteing as we dont need curl now.
     delete_option("sfsi_plus_curlErrorNotices");

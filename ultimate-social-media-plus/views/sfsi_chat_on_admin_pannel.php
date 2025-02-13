@@ -92,7 +92,7 @@ sfsi_dummy_chat_icon.element.style="position:fixed; bottom:0;right:10px;width:35
 sfsi_dummy_chat_icon.element.onclick=function(){
 	SFSI(".sfsi_plus_wait_container").show();
 }
-function sfsi_plus_open_chat(){
+function sfsi_plus_open_chat(e){
 	// console.log('window.jivo_api',window.jivo_api);
 	if(window.jivo_api){
 		// console.log('window.jivo_api.chatMode',window.jivo_api.chatMode());
@@ -117,13 +117,14 @@ function sfsi_plus_open_chat(){
 		let loadinter = setInterval(function() {
 			if (loaded == true) clearInterval(loadinter);
 			if (typeof window.jivo_api !== 'undefined') {
-				window.jivo_api.open()
+				// window.jivo_api.open()
 				loaded = true;
 			}
 		}, 30);
 	}
 	// jQuery(sfsi_dummy_chat_icon.element).html("<p style='text-align: center;font-size: 18px;'>Loading...</p>");
 	// jQuery(sfsi_dummy_chat_icon.element).hide();
+    sfsi_plus_close_quickpay(e);
 }
 sfsi_dummy_chat_icon.element.onclick=sfsi_plus_open_chat;
 var jivo_onLoadCallback = function(){

@@ -2,8 +2,8 @@
 Contributors: socialsharepro, socialtech
 Tags: Share, sharing, share buttons, share button, share social media
 Requires at least: 3.0
-Tested up to: 6.6.2
-Stable tag: 3.6.7
+Tested up to: 6.7.2
+Stable tag: 3.6.9
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -298,6 +298,15 @@ The premium plugin offrs many more social buttons from other social media platfo
 
 == Changelog ==
 
+= 3.6.9 =
+* Tested with wordpress 6.7.2
+* Improved icon placement
+* Fixed user reported bugs
+* Improved stability
+
+= 3.6.8 =
+* Refactored Youtube subscribe button to use channel id
+
 = 3.6.7 =
 * Tested with WordPress 6.6.2
 * Aligned new icons for desktop (Copy URL, InHa, RIA)
@@ -475,29 +484,12 @@ The premium plugin offrs many more social buttons from other social media platfo
 = 3.3.3 =
 * Updated texts
 
-= 3.3.2 =
-* Update: Option to define margin above and below responsive icons added
-* Update: Widget alignment issues fixed
-* Update: Replaced with icons which reduce the loading time
-
-= 3.3.1 =
-* Updated: Tweet text blank.
-* Updated: Export and import text size changed.
-* Updated: Video url changed.
-* Updated: Resolved the illegal offset error.
-
-= 3.3.0 =
-* Update: Responsive icons only on blog post.
-* Update: Lazy load css added.
-* Update: Success message after export.
-* Update: Changed the installer.
-* Update: Added shortcode support for the custom url.
-* Update: Updated Ping function.
+** Changelog truncated due to WordPress 5000-character limit.
 
 == Upgrade Notice ==
 
-= 3.6.7 =
-* Tested with WordPress 6.6.2
-* Aligned new icons for desktop (Copy URL, InHa, RIA)
-* Added necessary issets to add better backward compatibility
-* Slight PHP 8 compatibility improvement
+= 3.6.9 =
+* Tested with wordpress 6.7.2
+* Improved icon placement
+* Fixed user reported bugs
+* Improved stability

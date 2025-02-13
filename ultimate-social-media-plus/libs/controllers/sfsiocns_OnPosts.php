@@ -247,7 +247,7 @@ function sfsi_twitterShare( $permalink, $tweettext, $wrapper_div='yes' ) {
 	if ( 'yes' === $wrapper_div ) {
 		$twitter_html .= "<div class='sf_twiter' style='display: inline-block;vertical-align: middle;width: auto;'>";
 	}
-	$twitter_html .= "<a target='_blank' href='https://twitter.com/intent/tweet?text=" . urlencode($tweettext) . ' ' . $permalink . "'style='display:inline-block' >
+	$twitter_html .= "<a target='_blank' href='https://x.com/intent/post?text=" . urlencode($tweettext) . ' ' . $permalink . "'style='display:inline-block' >
 			<img nopin=nopin width='auto' class='sfsi_plus_wicon' src='" . $tweet_icon . "' alt='Tweet' title='Tweet' />
 		</a>";
 	if ( 'yes' === $wrapper_div ) {
@@ -259,7 +259,7 @@ function sfsi_twitterShare( $permalink, $tweettext, $wrapper_div='yes' ) {
 // if(empty($tweettext)){
 // 	$tweettext = "&nbsp";
 // }
-// $twitter_html = '<a rel="nofollow" href="https://twitter.com/intent/tweet" data-count="none" class="sr-twitter-button twitter-share-button" data-lang="'.$icons_language.'" data-url="'.$permalink.'" data-text="'.stripslashes($tweettext).'" ></a>';
+// $twitter_html = '<a rel="nofollow" href="https://x.com/intent/post" data-count="none" class="sr-twitter-button twitter-share-button" data-lang="'.$icons_language.'" data-url="'.$permalink.'" data-text="'.stripslashes($tweettext).'" ></a>';
 //  return $twitter_html;
 
 /* create fb like button */
@@ -550,7 +550,7 @@ function sfsi_plus_footer_script()
 						$share_url = "https://www.facebook.com/sharer/sharer.php?u=" . get_permalink();
 						break;
 					case "Twitter":
-						$twitter_text = $share_url = "https://twitter.com/intent/tweet?text=" . get_the_title() . "&url=" . get_permalink();
+						$twitter_text = $share_url = "https://x.com/intent/post?text=" . get_the_title() . "&url=" . get_permalink();
 						break;
 					case "Follow":
 						if (isset($option2['sfsi_plus_email_icons_functions']) && $option2['sfsi_plus_email_icons_functions'] == 'sf') {
