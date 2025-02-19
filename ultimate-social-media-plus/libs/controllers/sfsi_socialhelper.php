@@ -760,5 +760,17 @@ class sfsi_plus_SocialHelper
   
 	  return wp_kses_post($title);
 	}
+
+    public function sfsi_PinIt($url = '') {
+        // Ensure URL is sanitized
+
+        $encoded_url = urlencode(trim($url));
+
+
+        // Build the anchor tag with proper escaping
+        return "<a data-pin-custom='true' href='https://www.pinterest.com/pin/create/button/?url={$encoded_url}' " . sfsi_plus_checkNewWindow($url) . "></a>";
+    }
+
+
 }
 /* end of class */

@@ -3,7 +3,7 @@ Contributors: socialsharepro, socialtech
 Tags: Share, sharing, share buttons, share button, share social media
 Requires at least: 3.0
 Tested up to: 6.7.2
-Stable tag: 3.6.9
+Stable tag: 3.7.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -298,6 +298,10 @@ The premium plugin offrs many more social buttons from other social media platfo
 
 == Changelog ==
 
+= 3.7.0 =
+* Tested with wordpress 6.7.2
+* Fixes bug cause by missing function
+
 = 3.6.9 =
 * Tested with wordpress 6.7.2
 * Improved icon placement
@@ -488,8 +492,6 @@ The premium plugin offrs many more social buttons from other social media platfo
 
 == Upgrade Notice ==
 
-= 3.6.9 =
+= 3.7.0 =
 * Tested with wordpress 6.7.2
-* Improved icon placement
-* Fixed user reported bugs
-* Improved stability
+* Fixes bug cause by missing function
