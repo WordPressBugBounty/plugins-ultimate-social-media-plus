@@ -761,14 +761,14 @@ class sfsi_plus_SocialHelper
 	  return wp_kses_post($title);
 	}
 
-    public function sfsi_PinIt($url = '') {
+    public function sfsi_plus_PinIt($url = '', $icon = 0) {
         // Ensure URL is sanitized
 
-        $encoded_url = urlencode(trim($url));
+        $encoded_url = sanitize_url(trim($url));
 
 
         // Build the anchor tag with proper escaping
-        return "<a data-pin-custom='true' href='https://www.pinterest.com/pin/create/button/?url={$encoded_url}' " . sfsi_plus_checkNewWindow($url) . "></a>";
+        return "<a data-pin-custom='true' href='https://www.pinterest.com/pin/create/button/?url={$encoded_url}' " . sfsi_plus_checkNewWindow($url) . "><img class='sfsi_wicon' data-pin-nopin='true' alt='fb-share-icon' title='Pin Share' src='" . $icon . "' /></a>";
     }
 
 

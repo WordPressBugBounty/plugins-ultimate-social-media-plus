@@ -1,9 +1,9 @@
-﻿=== Social Share Icons & Social Share Buttons ===
+=== Social Share Icons & Social Share Buttons ===
 Contributors: socialsharepro, socialtech
 Tags: Share, sharing, share buttons, share button, share social media
 Requires at least: 3.0
 Tested up to: 6.7.2
-Stable tag: 3.7.0
+Stable tag: 3.7.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -187,13 +187,13 @@ The plugin is one of the most optimized social media plugin in terms of impact o
 
 If you still experience loading speed issues, please note that:
 
-- The more social sharing bottons and invite features you place on your site, the more external codes you load (i.e. from the social media sites; we just use their code), therefore impacting loading speed. So to prevent this, give your sharing buttons only 'Visit us'-functionality rather than sharing functionalities.
+- The more social sharing buttons and invite features you place on your site, the more external codes you load (i.e. from the social media sites; we just use their code), therefore impacting loading speed. So to prevent this, give your sharing buttons only 'Visit us'-functionality rather than sharing functionalities.
 
 - We've programed it so that the code for the social media buttons is the one which loads lasts on your site, i.e. after all the other content has already been loaded. This means: even if there is a decrease in loading speed, it does not impact a user's experience because he sees your site as quickly as before, only the social media buttons take a bit longer to load.
 
 There might be also other issues on your site which cause a high loading speed (e.g. conflicts with our plugins or template issues). Please ask your template creator about that.
 
-Also, if you've uploaded social media sharing buttons not provided by the plugin itself (i.e. custom buttons) please ensure they are compressd as well.
+Also, if you've uploaded social media sharing buttons not provided by the plugin itself (i.e. custom buttons) please ensure they are compressed as well.
 
 = After moving from demo-server to live-server the follow or subscribe link doesn't work anymore =
 
@@ -207,13 +207,13 @@ If you get the error message...
 
 'App Not Setup: This app is still in development mode, and you don't have access to it. Switch to a registered test user or ask an app admin for permissions.'
 
-...then most likely you're curently logged in with a business account on Facebook. Please logout, or switch to your personal account.
+...then most likely you're currently logged in with a business account on Facebook. Please log out, or switch to your personal account.
 
 = There are other issues when I activate the plugin or place the share buttons =
 
 Please check the following:
 
-The plugin requires that CURL is instaled & activated on your server (which should be the standard case). If you don't have it, please contact your hosting provider.
+The plugin requires that CURL is installed & activated on your server (which should be the standard case). If you don't have it, please contact your hosting provider.
 
 Please ensure that you don't have any browser extension activated which may conflict with the plugin, esp. those which block certain content including the share buttons. Known culprits include the 'Disconnect' extension in Chrome or the 'Privacy Badger' extension in Firefox.
 
@@ -221,7 +221,7 @@ If issues persist most likely your theme has issues which makes it incompatible 
 
 = How can I see how many people share or like my posts? =
 
-You can see this by activating the sharnig 'counts' on the front end (under question 5 in the plugin). This will display the counters in little bubbles showing how often people share your posts.
+You can see this by activating the sharing 'counts' on the front end (under question 5 in the plugin). This will display the counters in little bubbles showing how often people share your posts.
 
 We cannot provide you this data in other ways as it's coming directly from the social media sites. One exception: if you like to know when people start to follow you by email, then you can get email alerts. For that, please claim your feed.
 
@@ -241,7 +241,7 @@ Open the first question in the plugin ('1. Which sharing buttons do you want to 
 
 Yes, it's [DISPLAY_ULTIMATE_SOCIAL_ICONS]. You can place it into any editor. If the sharing buttons still don't show, there might be an issue with your theme.
 
-Alternatively, you can place the followin into your codes: <?php echo do_shortcode('[DISPLAY_ULTIMATE_SOCIAL_ICONS]'); ?>
+Alternatively, you can place the following into your codes: <?php echo do_shortcode('[DISPLAY_ULTIMATE_SOCIAL_ICONS]'); ?>
 
 In some cases there might be issues to display social media sharing buttons which you uploaded as custom buttons. In this case, we provide support as part of our premium plugin: https://www.ultimatelysocial.com/usm-premium/
 
@@ -253,11 +253,11 @@ Please use this plugin for that: https://www.ultimatelysocial.com/usm-premium/. 
 
 Yes, that is possible in our new social share plugin, the Premium Plugin: https://www.ultimatelysocial.com/usm-premium/
 
-To get the email button in the same design style you picked, activate it, then on the front-end, rightclick on the button, and save it as picture. Upload that picture as custom button.
+To get the email button in the same design style you picked, activate it, then on the front-end, right click on the button, and save it as picture. Upload that picture as custom button.
 
 = Can I also display the share buttons vertically? =
 
-Yes, that is possible in our new social sharing plugin, the Premium Plugn: https://www.ultimatelysocial.com/usm-premium/.
+Yes, that is possible in our new social sharing plugin, the Premium Plugin: https://www.ultimatelysocial.com/usm-premium/.
 
 = How can I change the text on the 'visit us'-buttons? =
 
@@ -269,11 +269,11 @@ Yes, there's an option for that under question 5. In our new Premium Plugin you 
 
 = How can I use two instances of the plugin on my site? =
 
-You cannot use the same plugin twice, however you can install both the first USM plugin (https://wordpress.org/plugins/ultimate-social-media-icons/) as well as the Premiuem plugin (https://www.ultimatelysocial.com/usm-premium/). We've developed the code so that there are no conflicts and they can be used in parallel.
+You cannot use the same plugin twice, however you can install both the first USM plugin (https://wordpress.org/plugins/ultimate-social-media-icons/) and the Premium plugin (https://www.ultimatelysocial.com/usm-premium/). We've developed the code so that there are no conflicts, and they can be used in parallel.
 
 = Where can I find icons for more social media platforms? =
 
-The premium plugin offrs many more social buttons from other social media platforms such as Snapchat, Whattsapp, Yelp, Sound cloud and many others. It's the best socialsharing plugin on the market :) Check it out at https://www.ultimatelysocial.com/usm-premium/
+The premium plugin offers many more social buttons from other social media platforms such as Snapchat, WhatsApp, Yelp, Sound cloud and many others. It's the best social sharing plugin on the market :) Check it out at https://www.ultimatelysocial.com/usm-premium/
 
 
 == Screenshots ==
@@ -298,18 +298,23 @@ The premium plugin offrs many more social buttons from other social media platfo
 
 == Changelog ==
 
+= 3.7.1 =
+* Fixed bug related to Pinterest icons
+* Quality improvements
+* Improved stability
+
 = 3.7.0 =
-* Tested with wordpress 6.7.2
+* Tested with WordPress 6.7.2
 * Fixes bug cause by missing function
 
 = 3.6.9 =
-* Tested with wordpress 6.7.2
+* Tested with WordPress 6.7.2
 * Improved icon placement
 * Fixed user reported bugs
 * Improved stability
 
 = 3.6.8 =
-* Refactored Youtube subscribe button to use channel id
+* Refactored YouTube subscribe button to use channel id
 
 = 3.6.7 =
 * Tested with WordPress 6.6.2
@@ -366,7 +371,7 @@ The premium plugin offrs many more social buttons from other social media platfo
 * Updated promotion module
 * Minor improvements for all icons rendering 
 * Updated carrousel module for PHP 8.2 and resolved conflicts
-* Improved overall compatiblity with PHP 8.2
+* Improved overall compatibility with PHP 8.2
 * Fixed warnings in PHP 8+ with mastodon icon
 * Now mastodon icon order will be correct
 
@@ -422,7 +427,7 @@ The premium plugin offrs many more social buttons from other social media platfo
 = 3.4.9 =
 * Updated to WordPress 5.7.2 compatibility.
 * Change unserialize to maybe_unserialize
-* Added target attribute in Facebook and twitter sharing links
+* Added target attribute in Facebook and X/Twitter sharing links
 * Update Instagram icons
 * Some minor fixes
 
@@ -479,19 +484,11 @@ The premium plugin offrs many more social buttons from other social media platfo
 * Fixed UI issues.
 * Fixed problems with moving to Follow.it
 
-= 3.3.4 =
-* Updated Banners to make them less annoying.
-* Updated to follow.it
-* Quick purchase updated.
-* Some Style and typo corrections.
-
-= 3.3.3 =
-* Updated texts
-
 ** Changelog truncated due to WordPress 5000-character limit.
 
 == Upgrade Notice ==
 
-= 3.7.0 =
-* Tested with wordpress 6.7.2
-* Fixes bug cause by missing function
+= 3.7.1 =
+* Fixed bug related to Pinterest icons
+* Quality improvements
+* Improved stability

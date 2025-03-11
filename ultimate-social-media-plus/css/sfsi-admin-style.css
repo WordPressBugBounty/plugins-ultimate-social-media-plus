@@ -5647,7 +5647,7 @@ div#analyst-install-modal * {
 }
 
 .sfsiplus_icns_tab_3 .sfsiplus_icon_bgcolor.sfsiplus_mastodon_section img {
-    width: 100%;
+    /*width: 100%;*/
 }
 
 .sfsiplus_icon_color_picker {

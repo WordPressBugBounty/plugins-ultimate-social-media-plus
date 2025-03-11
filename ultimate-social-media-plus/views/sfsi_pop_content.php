@@ -287,12 +287,12 @@ $connectFeedLgn	= "https://api.follow.it/?".base64_encode("userprofile=wordpress
 	</div>
 </div><!-- END You tube  example pop up -->
 <?php
-$pin_url=($option2['sfsi_plus_pinterest_pageUrl']!='') ?  $option2['sfsi_plus_pinterest_pageUrl'] : 'http://pinterest.com/follow.it' ;
+$pin_url= isset($option2['sfsi_pinterest_pageUrl']) && !empty($option2['sfsi_pinterest_pageUrl']) ? $option2['sfsi_pinterest_pageUrl'] : 'http://pinterest.com/follow.it' ;
 ?>
 <!-- Pinterest  example pop up -->
 <div class="pop-overlay read-overlay pinex-s2" >
     <div class="pop_up_box_ex sfsi_pop_up adPopWidth" >
-        <img src="<?php echo SFSI_PLUS_PLUGURL; ?>images/close.jpg" id="close_popup" class="sfsicloseBtn" />
+        <img alt="pinterest logo" src="<?php echo SFSI_PLUS_PLUGURL; ?>images/close.jpg" id="close_popup" class="sfsicloseBtn" />
     	<h4 id="readmore_text">
         	<?php  _e( 'Move over the Pinterest-icon…', 'ultimate-social-media-plus' ); ?>
         </h4>

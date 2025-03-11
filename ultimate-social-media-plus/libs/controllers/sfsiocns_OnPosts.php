@@ -52,7 +52,7 @@ function sfsi_plus_social_buttons_below($content)
 	}
 
 	$txt = isset( $sfsi_section8['sfsi_plus_textBefor_icons'] ) ? $sfsi_section8['sfsi_plus_textBefor_icons'] : "Please follow and like us:";
-	
+
 	$float = $sfsi_section8['sfsi_plus_icons_alignment'];
 	if ( $float == "center" ) {
 		$style = 'float:none; display: inline-block;';
@@ -174,7 +174,7 @@ function sfsi_plus_social_buttons_below($content)
 	if (!is_feed() && !is_home() && !is_page()) {
 		$content =   $content . $icons;
 	}
-	//}   
+	//}
 	return $content;
 }
 
@@ -265,7 +265,7 @@ function sfsi_twitterShare( $permalink, $tweettext, $wrapper_div='yes' ) {
 /* create fb like button */
 function sfsi_plus_FBlike($permalink, $show_count)
 {
-	$send = 'false';
+    $send = 'false';
 	$width = 180;
 
 	$fb_like_html = '';
@@ -285,17 +285,16 @@ function sfsi_plus_FBlike($permalink, $show_count)
 
 function sfsi_plus_FBshare($permalink, $show_count)
 {
-	$fb_share_html = '';
 	$sfsi_plus_section5_options = maybe_unserialize(get_option('sfsi_plus_section5_options', false));
 	$facebook_icons_lang = $sfsi_plus_section5_options["sfsi_plus_icons_language"];
 	$shareurl = "https://www.facebook.com/sharer/sharer.php?u=";
-	$shareurl = $shareurl . urlencode(urldecode($permalink));
-	$fb_share_html = "<a target='_blank' href='" . $shareurl . "' style='display:inline-block;'  > <img class='sfsi_wicon'  data-pin-nopin='true' width='auto' height='auto' alt='fb-share-icon' title='Facebook Share' src='" . SFSI_PLUS_PLUGURL . "images/share_icons/fb_icons/" . $facebook_icons_lang . ".svg'" . "'  /></a>";
-	return $fb_share_html;
+	$shareurl .= urlencode($permalink);
+	return "<a target='_blank' href='" . $shareurl . "' style='display:inline-block;'  > <img class='sfsi_wicon'  data-pin-nopin='true' width='auto' height='auto' alt='fb-share-icon' title='Facebook Share' src='" . SFSI_PLUS_PLUGURL . "images/share_icons/fb_icons/" . $facebook_icons_lang . ".svg'" . "'  /></a>";
 }
 
 function sfsi_plus_pinterest_Custom($permalink, $show_count = false) {
-	$pinit_html = "<a href='https://www.pinterest.com/pin/create/button/?url=&media=&description' style='display:inline-block;'><img class='sfsi_wicon'  data-pin-nopin='true' width='auto' height='auto' alt='Pin Share' title='Pin Share' src='" . SFSI_PLUS_PLUGURL . "images/share_icons/en_US_save.svg" . "' /></a>";
+    $permalink=esc_url($permalink);
+	$pinit_html = "<a href='https://www.pinterest.com/pin/create/button/?url={$permalink}' data-pin-custom='true' target='_blank' style='display:inline-block;'><img class='sfsi_wicon'  data-pin-nopin='true' width='auto' height='auto' alt='Pin Share' title='Pin Share' src='" . SFSI_PLUS_PLUGURL . "images/share_icons/en_US_save.svg" . "' /></a>";
 	return $pinit_html;
 }
 
@@ -366,7 +365,8 @@ function sfsi_plus_footer_script()
 		|| ($sfsi_section1['sfsi_plus_facebook_display'] == "yes" && ($sfsi_section2['sfsi_plus_facebookLike_option'] == "yes") && $common_options_check)
 	) { ?>
 		<!--facebook like and share js -->
-		<div id="fb-root"></div>
+        <script async defer type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+        <div id="fb-root"></div>
 
 		<script>
 			(function(d, s, id) {
@@ -436,7 +436,7 @@ function sfsi_plus_footer_script()
 			}
 		}
 		/* filter the content of post */
-		//commenting following code as we are going to extend this functionality 
+		//commenting following code as we are going to extend this functionality
 		//add_filter('the_content', 'sfsi_plus_social_buttons_below');
 
 		/* update footer for frontend and admin both */
@@ -523,7 +523,7 @@ function sfsi_plus_footer_script()
 			} else {
 				$sfsi_plus_anchor_style .= 'text-align:left;';
 			}
-			
+
 			if ($sfsi_plus_responsive_icons["settings"]["margin"] !== "") {
 				$sfsi_plus_anchor_style .= 'margin-left:' . $sfsi_plus_responsive_icons["settings"]["margin"] . "px; ";
 				// $sfsi_plus_anchor_style.='margin-bottom:'.$sfsi_plus_responsive_icons["settings"]["margin"]."px; ";

@@ -944,7 +944,9 @@ function sfsi_plus_prepairIcons($icon_name, $is_front = 0, $onpost = "no", $from
 
             $visit_icon = $visit_iconsUrl . "pinterest.png";
 
-            $url = (isset($sfsi_plus_section2_options['sfsi_plus_pinterest_pageUrl'])) ? $sfsi_plus_section2_options['sfsi_plus_pinterest_pageUrl'] : '';
+            $pinterest_url=isset($sfsi_plus_section2_options['sfsi_plus_pinterest_pageUrl'])?$sfsi_plus_section2_options['sfsi_plus_pinterest_pageUrl']:'javascript:void(0);';
+            //only use the url for hoverdiv; set to javascript:void(0); after using in hoverdiv
+            $url = ($pinterest_url && $pinterest_url!=='') ? $sfsi_plus_section2_options['sfsi_plus_pinterest_pageUrl'] : 'javascript:void(0);';
 
             //Giving alternative text to image
             if (!empty($sfsi_plus_section5_options['sfsi_plus_pinterest_MouseOverText'])) {
@@ -958,11 +960,11 @@ function sfsi_plus_prepairIcons($icon_name, $is_front = 0, $onpost = "no", $from
             if ($sfsi_plus_section2_options['sfsi_plus_pinterest_pingBlog'] == "yes") {
                 $hoverSHow = 1;
                 if ($sfsi_plus_section2_options['sfsi_plus_pinterest_page'] == "yes") {
-                    $hoverdiv .= "<div  class='icon1'><a href='" . $url . "' " . sfsi_plus_checkNewWindow($url) . "><img class='sfsi_plus_wicon' alt='" . $alt_text . "' title='" . $alt_text . "' src='" . $visit_icon . "'  /></a></div>";
+	                $hoverdiv .= "<div  class='icon1'><a href='" . $url . "' " . sfsi_plus_checkNewWindow($url) . "><img data-pin-nopin='true' class='sfsi_wicon'  alt='" . $alt_text . "' title='" . $alt_text . "' src='" . $visit_icon . "' /></a></div>";
                 }
-                if ($sfsi_plus_section2_options['sfsi_plus_pinterest_pingBlog'] == "yes") {
-                    $hoverdiv .= "<div  class='icon2'>" . $socialObj->sfsi_PinIt($current_url) . "</div>";
-                }
+
+	            $pinterest_save = SFSI_PLUS_PLUGURL . 'images/share_icons/Pinterest_Save/' . $icons_language . '_save.svg';
+	            $hoverdiv .= "<div  class='icon2'>" . $socialObj->sfsi_plus_PinIt($current_url, $pinterest_save) . "</div>";
             }
 
             /* fecth no of counts if active in admin section */
@@ -1003,6 +1005,9 @@ function sfsi_plus_prepairIcons($icon_name, $is_front = 0, $onpost = "no", $from
                     $sfsi_plus_icon_bgColor = '#CC3333';
                 }
             }
+
+            //set url to javascript:void(0); so when user clicks pintereset icon nothing happens
+            $url='javascript:void(0);';
             break;
 
         case "instagram":
@@ -1735,8 +1740,8 @@ function sfsi_plus_prepairIcons($icon_name, $is_front = 0, $onpost = "no", $from
         $icons .= "<div style='width:" . $icon_width . "px; height:auto;margin-left:" . $icons_space . "px;margin-bottom:" . $margin_bot . "' class='sfsi_plus_wicons shuffeldiv1 " . $cmcls . "'>";
 
         $icons .= "<div class='sfsiplus_inerCnt'>";
-        $url = urlencode(trim($url));
-        $icons .= "<a class='" . $class . "sficn1' data-effect='" . $mouse_hover_effect . "' $new_window  href='https://www.pinterest.com/pin/create/button/?url={$url}'  style='width:" . $icon_width . "px; height:" . $icon_width . "px;opacity:" . $icon_opacity . ";" . $sfsi_plus_icon_bgColor_style . "' " . (isset($sfsi_onclick) ? 'onclick="' . $sfsi_onclick . '"' : '') . ">";
+
+        $icons .= "<a class='" . $class . "sficn1' data-effect='" . $mouse_hover_effect . "' $new_window  href='" . $url . "'  style='width:" . $icon_width . "px; height:" . $icon_width . "px;opacity:" . $icon_opacity . ";" . $sfsi_plus_icon_bgColor_style . "' " . (isset($sfsi_onclick) ? 'onclick="' . $sfsi_onclick . '"' : '') . ">";
 
         $icons .= "<img alt='" . $alt_text . "' title='" . $alt_text . "' src='" . $icon . "' width='" . $icons_size . "' height='" . $icons_size . "' style='" . $border_radius . $padding_top . "' class='sfcm sfsi_wicon sfsiplusid_round_icon_" . $icon_name . "' data-effect='" . $mouse_hover_effect . "'  />";
 
