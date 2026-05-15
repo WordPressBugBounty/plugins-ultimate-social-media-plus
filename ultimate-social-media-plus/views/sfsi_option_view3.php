@@ -82,6 +82,8 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                         <span class="sfsiplus_row_1_28 sfsiplus_mastodon_section"></span>
                         <span class="sfsiplus_row_1_30 sfsiplus_ria_section"></span>
                         <span class="sfsiplus_row_1_31 sfsiplus_inha_section"></span>
+                        <span class="sfsiplus_row_1_32 sfsiplus_threads_section"></span>
+                        <span class="sfsiplus_row_1_33 sfsiplus_bluesky_section"></span>
                         <!--<span class="sfsiplus_row_1_11 sf_section"></span>-->
                     </div>
                 </li>
@@ -106,7 +108,7 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                         <?php _e( 'Flat', 'ultimate-social-media-plus' ); ?>
                     </label>
                     <?php
-                        $sfsi_plus_rss_bgColor = $sfsi_plus_rss_bgColor_style = $sfsi_plus_email_bgColor = $sfsi_plus_email_bgColor_style = $sfsi_plus_facebook_bgColor = $sfsi_plus_facebook_bgColor_style = $sfsi_plus_twitter_bgColor = $sfsi_plus_twitter_bgColor_style = $sfsi_plus_youtube_bgColor = $sfsi_plus_youtube_bgColor_style = $sfsi_plus_linkedin_bgColor = $sfsi_plus_linkedin_bgColor_style = $sfsi_plus_pinterest_bgColor = $sfsi_plus_pinterest_bgColor_style = $sfsi_plus_instagram_bgColor = $sfsi_plus_instagram_bgColor_style = $sfsi_plus_houzz_bgColor = $sfsi_plus_houzz_bgColor_style = $sfsi_plus_ok_bgColor = $sfsi_plus_ok_bgColor_style = $sfsi_plus_telegram_bgColor = $sfsi_plus_telegram_bgColor_style = $sfsi_plus_vk_bgColor = $sfsi_plus_vk_bgColor_style = $sfsi_plus_wechat_bgColor = $sfsi_plus_wechat_bgColor_style = $sfsi_plus_whatsapp_bgColor = $sfsi_plus_whatsapp_bgColor_style = $sfsi_plus_weibo_bgColor = $sfsi_plus_weibo_bgColor_style = $sfsi_plus_copylink_bgColor = $sfsi_plus_copylink_bgColor_style = $sfsi_plus_mastodon_bgColor = $sfsi_plus_mastodon_bgColor_style = $sfsi_plus_ria_bgColor = $sfsi_plus_ria_bgColor_style = $sfsi_plus_inha_bgColor = $sfsi_plus_inha_bgColor_style =  '';
+                        $sfsi_plus_rss_bgColor = $sfsi_plus_rss_bgColor_style = $sfsi_plus_email_bgColor = $sfsi_plus_email_bgColor_style = $sfsi_plus_facebook_bgColor = $sfsi_plus_facebook_bgColor_style = $sfsi_plus_twitter_bgColor = $sfsi_plus_twitter_bgColor_style = $sfsi_plus_youtube_bgColor = $sfsi_plus_youtube_bgColor_style = $sfsi_plus_linkedin_bgColor = $sfsi_plus_linkedin_bgColor_style = $sfsi_plus_pinterest_bgColor = $sfsi_plus_pinterest_bgColor_style = $sfsi_plus_instagram_bgColor = $sfsi_plus_instagram_bgColor_style = $sfsi_plus_houzz_bgColor = $sfsi_plus_houzz_bgColor_style = $sfsi_plus_ok_bgColor = $sfsi_plus_ok_bgColor_style = $sfsi_plus_telegram_bgColor = $sfsi_plus_telegram_bgColor_style = $sfsi_plus_vk_bgColor = $sfsi_plus_vk_bgColor_style = $sfsi_plus_wechat_bgColor = $sfsi_plus_wechat_bgColor_style = $sfsi_plus_whatsapp_bgColor = $sfsi_plus_whatsapp_bgColor_style = $sfsi_plus_weibo_bgColor = $sfsi_plus_weibo_bgColor_style = $sfsi_plus_copylink_bgColor = $sfsi_plus_copylink_bgColor_style = $sfsi_plus_mastodon_bgColor = $sfsi_plus_mastodon_bgColor_style = $sfsi_plus_ria_bgColor = $sfsi_plus_ria_bgColor_style = $sfsi_plus_inha_bgColor = $sfsi_plus_inha_bgColor_style = $sfsi_plus_threads_bgColor = $sfsi_plus_threads_bgColor_style = $sfsi_plus_bluesky_bgColor = $sfsi_plus_bluesky_bgColor_style =  '';
                         
                         if ( isset( $option3['sfsi_plus_rss_bgColor'] ) && $option3['sfsi_plus_rss_bgColor'] != '' ) {
                             $sfsi_plus_rss_bgColor = $option3['sfsi_plus_rss_bgColor'];
@@ -182,6 +184,13 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                         } else {
                             $sfsi_plus_instagram_bgColor_style = 'background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, rgba(0, 0, 0, 0) 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, rgba(0, 0, 0, 0)), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%)';
                         }
+
+                        if ( isset( $option3['sfsi_plus_threads_bgColor'] ) && $option3['sfsi_plus_threads_bgColor'] != '' ) {
+                            $sfsi_plus_threads_bgColor = $option3['sfsi_plus_threads_bgColor'];
+                            $sfsi_plus_threads_bgColor_style = 'background: '.$sfsi_plus_threads_bgColor;
+                        } else {
+                            $sfsi_plus_threads_bgColor_style = 'background: #000000';
+                        }
                     
                         if ( isset( $option3['sfsi_plus_houzz_bgColor'] ) && $option3['sfsi_plus_houzz_bgColor'] != '' ) {
                             $sfsi_plus_houzz_bgColor = $option3['sfsi_plus_houzz_bgColor'];
@@ -209,6 +218,12 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                             $sfsi_plus_vk_bgColor_style = 'background: '.$sfsi_plus_vk_bgColor;
                         } else {
                             $sfsi_plus_vk_bgColor_style = 'background: #4E77A2';
+                        }
+                        if ( isset( $option3['sfsi_plus_bluesky_bgColor'] ) && $option3['sfsi_plus_bluesky_bgColor'] != '' ) {
+                            $sfsi_plus_bluesky_bgColor = $option3['sfsi_plus_bluesky_bgColor'];
+                            $sfsi_plus_bluesky_bgColor_style = 'background: '.$sfsi_plus_bluesky_bgColor;
+                        } else {
+                            $sfsi_plus_bluesky_bgColor_style = 'background: #2b87ff';
                         }
                     
                         if ( isset( $option3['sfsi_plus_wechat_bgColor'] ) && $option3['sfsi_plus_wechat_bgColor'] != '' ) {
@@ -401,6 +416,23 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                                 <input name="sfsi_plus_inha_bgColor" data-default-color="#348cbc" id="sfsi_plus_inha_bgColor" class="sfsi_plus_input_bgColor" type="text" value="<?php echo esc_attr( $sfsi_plus_inha_bgColor ); ?>" />
                             </span>
                         </span>
+                        <span class="sfsiplus_row_2_32 sfsiplus_icon_bgcolor sfsiplus_threads_section">
+                            <span class="sfsiplus_icon_img_wrapper" style="<?php echo esc_attr( $sfsi_plus_threads_bgColor_style ); ?>">
+                                <img src="<?php echo SFSI_PLUS_PLUGURL ?>images/icons_theme/flat/flat_threads.png" alt="" />
+                            </span>
+                            <span class="sfsiplus_icon_color_picker">
+                                <input name="sfsi_plus_threads_bgColor" data-default-color="#348cbc" id="sfsi_plus_threads_bgColor" class="sfsi_plus_input_bgColor" type="text" value="<?php echo esc_attr( $sfsi_plus_threads_bgColor ); ?>" />
+                            </span>
+                        </span>
+
+                        <span class="sfsiplus_row_2_33 sfsiplus_icon_bgcolor sfsiplus_bluesky_section">
+                            <span class="sfsiplus_icon_img_wrapper" style="<?php echo esc_attr( $sfsi_plus_bluesky_bgColor_style ); ?>">
+                                <img src="<?php echo SFSI_PLUS_PLUGURL ?>images/icons_theme/flat/flat_bluesky.png" alt="" />
+                            </span>
+                            <span class="sfsiplus_icon_color_picker">
+                                <input name="sfsi_plus_bluesky_bgColor" data-default-color="#348cbc" id="sfsi_plus_bluesky_bgColor" class="sfsi_plus_input_bgColor" type="text" value="<?php echo esc_attr( $sfsi_plus_bluesky_bgColor ); ?>" />
+                            </span>
+                        </span>
                         <!--<span class="sfsiplus_row_2_11 sf_section"></span>-->
                     </div>
                 </li>
@@ -429,6 +461,8 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                         <span class="sfsiplus_row_3_28 sfsiplus_mastodon_section"></span>
                         <span class="sfsiplus_row_3_30 sfsiplus_ria_section"></span>
                         <span class="sfsiplus_row_3_31 sfsiplus_inha_section"></span>
+                        <span class="sfsiplus_row_3_32 sfsiplus_threads_section"></span>
+                        <span class="sfsiplus_row_3_33 sfsiplus_bluesky_section"></span>
                         <!--
                         <span class="sfsiplus_row_3_11 sf_section"></span>-->    </div>
                 </li>
@@ -457,6 +491,8 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                         <span class="sfsiplus_row_4_28 sfsiplus_mastodon_section"></span>
                         <span class="sfsiplus_row_4_30 sfsiplus_ria_section"></span>
                         <span class="sfsiplus_row_4_31 sfsiplus_inha_section"></span>
+                        <span class="sfsiplus_row_4_32 sfsiplus_threads_section"></span>
+                        <span class="sfsiplus_row_4_33 sfsiplus_bluesky_section"></span>
                         <!--
                         <span class="sfsiplus_row_4_11 sf_section"></span>-->    </div>
                 </li>
@@ -487,6 +523,8 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                         <span class="sfsiplus_row_5_28 sfsiplus_mastodon_section"></span>
                         <span class="sfsiplus_row_5_30 sfsiplus_ria_section"></span>
                         <span class="sfsiplus_row_5_31 sfsiplus_inha_section"></span>
+                        <span class="sfsiplus_row_5_32 sfsiplus_threads_section"></span>
+                        <span class="sfsiplus_row_5_33 sfsiplus_bluesky_section"></span>
                         <!--
                         <span class="sfsiplus_row_5_11 sf_section"></span>-->    </div>
                 </li>
@@ -514,6 +552,8 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                         <span class="sfsiplus_row_6_28 sfsiplus_mastodon_section"></span>
                         <span class="sfsiplus_row_6_30 sfsiplus_ria_section"></span>
                         <span class="sfsiplus_row_6_31 sfsiplus_inha_section"></span>
+                        <span class="sfsiplus_row_6_32 sfsiplus_threads_section"></span>
+                        <span class="sfsiplus_row_6_33 sfsiplus_bluesky_section"></span>
                         <!--
                         <span class="sfsiplus_row_6_11 sf_section"></span>-->    </div>
                 </li>
@@ -541,6 +581,8 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                         <span class="sfsiplus_row_7_28 sfsiplus_mastodon_section"></span>
                         <span class="sfsiplus_row_7_30 sfsiplus_ria_section"></span>
                         <span class="sfsiplus_row_7_31 sfsiplus_inha_section"></span>
+                        <span class="sfsiplus_row_7_32 sfsiplus_threads_section"></span>
+                        <span class="sfsiplus_row_7_33 sfsiplus_bluesky_section"></span>
                         <!--<span class="sfsiplus_row_7_11 sf_section"></span>-->
                     </div>
                 </li>
@@ -568,6 +610,8 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                         <span class="sfsiplus_row_8_28 sfsiplus_mastodon_section"></span>
                         <span class="sfsiplus_row_8_30 sfsiplus_ria_section"></span>
                         <span class="sfsiplus_row_8_31 sfsiplus_inha_section"></span>
+                        <span class="sfsiplus_row_8_32 sfsiplus_threads_section"></span>
+                        <span class="sfsiplus_row_8_33 sfsiplus_bluesky_section"></span>
                         <!--<span class="sfsiplus_row_8_11 sf_section"></span>-->
                     </div>
                 </li>
@@ -599,6 +643,8 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                         <span class="sfsiplus_row_9_28 sfsiplus_mastodon_section"></span>
                         <span class="sfsiplus_row_9_30 sfsiplus_ria_section"></span>
                         <span class="sfsiplus_row_9_31 sfsiplus_inha_section"></span>
+                        <span class="sfsiplus_row_9_32 sfsiplus_threads_section"></span>
+                        <span class="sfsiplus_row_9_33 sfsiplus_bluesky_section"></span>
                         <!--<span class="sfsiplus_row_9_11 sf_section"></span>-->
                     </div>
                 </li>
@@ -626,6 +672,8 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                         <span class="sfsiplus_row_10_28 sfsiplus_mastodon_section"></span>
                         <span class="sfsiplus_row_10_30 sfsiplus_ria_section"></span>
                         <span class="sfsiplus_row_10_31 sfsiplus_inha_section"></span>
+                        <span class="sfsiplus_row_10_32 sfsiplus_threads_section"></span>
+                        <span class="sfsiplus_row_10_33 sfsiplus_bluesky_section"></span>
                         <!--
                         <span class="sfsiplus_row_10_11 sf_section"></span>-->    </div>
                 </li>
@@ -653,6 +701,8 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                         <span class="sfsiplus_row_11_28 sfsiplus_mastodon_section"></span>
                         <span class="sfsiplus_row_11_30 sfsiplus_ria_section"></span>
                         <span class="sfsiplus_row_11_31 sfsiplus_inha_section"></span>
+                        <span class="sfsiplus_row_11_32 sfsiplus_threads_section"></span>
+                        <span class="sfsiplus_row_11_33 sfsiplus_bluesky_section"></span>
                         <!--<span class="sfsiplus_row_11_11 sf_section"></span>-->
                     </div>
                 </li>
@@ -680,6 +730,8 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                         <span class="sfsiplus_row_12_28 sfsiplus_mastodon_section"></span>
                         <span class="sfsiplus_row_12_30 sfsiplus_ria_section"></span>
                         <span class="sfsiplus_row_12_31 sfsiplus_inha_section"></span>
+                        <span class="sfsiplus_row_12_32 sfsiplus_threads_section"></span>
+                        <span class="sfsiplus_row_12_33 sfsiplus_bluesky_section"></span>
                         <!--
                         <span class="sfsiplus_row_12_11 sf_section"></span>-->    </div>
                 </li>
@@ -710,6 +762,8 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                         <span class="sfsiplus_row_13_28 sfsiplus_mastodon_section"></span>
                         <span class="sfsiplus_row_13_30 sfsiplus_ria_section"></span>
                         <span class="sfsiplus_row_13_31 sfsiplus_inha_section"></span>
+                        <span class="sfsiplus_row_13_32 sfsiplus_threads_section"></span>
+                        <span class="sfsiplus_row_13_33 sfsiplus_bluesky_section"></span>
                         <!--
                         <span class="sfsiplus_row_13_11 sf_section"></span>-->    </div>
                 </li>
@@ -737,6 +791,8 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                         <span class="sfsiplus_row_14_28 sfsiplus_mastodon_section"></span>
                         <span class="sfsiplus_row_14_30 sfsiplus_ria_section"></span>
                         <span class="sfsiplus_row_14_31 sfsiplus_inha_section"></span>
+                        <span class="sfsiplus_row_14_32 sfsiplus_threads_section"></span>
+                        <span class="sfsiplus_row_14_33 sfsiplus_bluesky_section"></span>
                         <!--<span class="sfsiplus_row_14_11 sf_section"></span>-->
                     </div>
                 </li>
@@ -764,6 +820,8 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                         <span class="sfsiplus_row_15_28 sfsiplus_mastodon_section"></span>
                         <span class="sfsiplus_row_15_30 sfsiplus_ria_section"></span>
                         <span class="sfsiplus_row_15_31 sfsiplus_inha_section"></span>
+                        <span class="sfsiplus_row_15_32 sfsiplus_threads_section"></span>
+                        <span class="sfsiplus_row_15_33 sfsiplus_bluesky_section"></span>
                         <!--<span class="sfsiplus_row_15_11 sf_section"></span>-->
                     </div>
                 </li>
@@ -794,6 +852,8 @@ $mouseover_other_icons_transition_effect = (isset($option3['mouseover_other_icon
                         <span class="sfsiplus_row_16_28 sfsiplus_mastodon_section"></span>
                         <span class="sfsiplus_row_16_30 sfsiplus_ria_section"></span>
                         <span class="sfsiplus_row_16_31 sfsiplus_inha_section"></span>
+                        <span class="sfsiplus_row_16_32 sfsiplus_threads_section"></span>
+                        <span class="sfsiplus_row_16_33 sfsiplus_bluesky_section"></span>
                         <!--<span class="sfsiplus_row_16_11 sf_section"></span>-->
                     </div>
                 </li>

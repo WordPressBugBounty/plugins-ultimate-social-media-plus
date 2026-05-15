@@ -516,8 +516,18 @@ function sfsi_plus_wechat_share(url) {
         sfsi_plus_wechat_share_mobile(url);
     } else {
         if (jQuery('.sfsi_plus_wechat_follow_overlay').length == 0) {
-            jQuery('body').append("<div class='sfsi_plus_wechat_follow_overlay sfsi_plus_overlay show'><div class='sfsi_plus_inner_display'><a class='close_btn' href='' onclick=\"event.preventDefault();close_overlay(\'.sfsi_plus_wechat_follow_overlay\')\" >&times;</a><div style='width:95%;max-width:500px; min-height:80%;background-color:#fff;margin:0 auto;margin:10% auto;padding: 20px 0;'><div style='width:90%;margin: 0 auto;text-align:center'><div class='sfsi_plus_wechat_qr_display' style='display:inline-block'></div></div><div style='width:80%;margin:10px auto 0 auto;text-align:center;font-weight:900;font-size:25px;'>\"Scan QR Code\" in WeChat and press ··· to share!</div></div></div>");
-            new QRCode(jQuery('.sfsi_plus_wechat_follow_overlay .sfsi_plus_wechat_qr_display')[0], encodeURI(decodeURI(window.location.href)))
+            jQuery('body').append("<div class='sfsi_plus_wechat_follow_overlay sfsi_plus_overlay show'><div class='sfsi_plus_inner_display'><a class='close_btn' style='position:absolute; top:10px; right:15px; width:24px; height:24px; display:flex; align-items:center; justify-content:center; font-size:24px; color:#999; text-decoration:none;' href='' onclick=\"event.preventDefault();close_overlay(\'.sfsi_plus_wechat_follow_overlay\')\" >&times;</a><div style='width:95%;max-width:500px; min-height:80%;background-color:#fff;margin:0 auto;margin:10% auto;padding: 20px 0;'><div style='width:90%;margin: 0 auto;text-align:center'><div class='sfsi_plus_wechat_qr_display' style='display:inline-block'></div></div><div style='width:80%;margin:10px auto 0 auto;text-align:center;font-weight:900;font-size:25px;'>\"Scan QR Code\" in WeChat and press ··· to share!</div></div></div>");
+            const currentUrl = window.location.href;
+            // Clean up the URL - remove any existing encoding and re-encode
+            const cleanUrl = new URL(currentUrl);
+            // Rebuild the URL with proper encoding
+            const finalUrl = cleanUrl.origin + cleanUrl.pathname + cleanUrl.search;
+            new QRCode(jQuery('.sfsi_plus_wechat_follow_overlay .sfsi_plus_wechat_qr_display')[0], {
+                text: finalUrl,
+                width: 256,
+                height: 256,
+                correctLevel: QRCode.CorrectLevel.L
+            });
             jQuery('.sfsi_plus_wechat_follow_overlay .sfsi_plus_wechat_qr_display img').attr('nopin', 'nopin')
         } else {
             jQuery('.sfsi_plus_wechat_follow_overlay').removeClass('hide').addClass('show');
@@ -527,7 +537,23 @@ function sfsi_plus_wechat_share(url) {
 
 function sfsi_plus_wechat_share_mobile(url) {
     if (jQuery('.sfsi_plus_wechat_follow_overlay').length == 0) {
-        jQuery('body').append("<div class='sfsi_plus_wechat_follow_overlay sfsi_plus_overlay show'><div class='sfsi_plus_inner_display'><a class='close_btn'  href='' onclick=\"event.preventDefault();close_overlay(\'.sfsi_plus_wechat_follow_overlay\')\" >&times;</a><div style='width:95%; min-height:80%;background-color:#fff;margin:0 auto;margin:20% auto;padding: 20px 0;'><div style='width:90%;margin: 0 auto;'><input type='text' value='" + encodeURI(decodeURI(window.location.href)) + "' style='width:100%;padding:7px 0;text-align:center' /></div><div style='width:80%;margin:10px auto 0 auto'><div style='width:30%;display:inline-block;text-align:center' class='sfsi_plus_upload_butt_container' ><button onclick='sfsi_copy_text_parent_input(event)' class='upload_butt' >Copy</button></div><div style='width:60%;display:inline-block;text-align:center;margin-left:10%' class='sfsi_plus_upload_butt_container' ><a href='weixin://' class='upload_butt'>Open WeChat</a></div></div></div></div>");
+        const overlayContent = `
+            <div class='sfsi_plus_wechat_follow_overlay sfsi_plus_overlay show'>
+                <div class='sfsi_plus_inner_display'>
+                   <a class='close_btn' href='' onclick="event.preventDefault();close_overlay('.sfsi_plus_wechat_follow_overlay')" style='position:absolute; top:10px; right:15px; width:24px; height:24px; display:flex; align-items:center; justify-content:center; font-size:24px; color:#999; text-decoration:none;'>&times;</a>
+                   <div style='width:95%; min-height:80%; background-color:#fff; margin:20% auto; padding:20px 0;'>
+                        <div style='width:90%; margin:0 auto;'>
+                            <input type='text' value='${encodeURI(decodeURI(window.location.href))}' style='width:95%; padding:10px; text-align:center; border:1px solid #ccc; font-size:14px;' />
+                        </div>
+                        <div style='width:80%; margin:20px auto 0; display:flex; justify-content:space-between; gap:10px;'>
+                            <button onclick='sfsi_copy_text_parent_input(event)' style='flex:1; padding:5px 0; background:#07C160; color:white; border:none; font-size:14px; cursor:pointer;'>Copy</button>
+                            <a href='weixin://' style='flex:1; padding:5px 0; background:#07C160; color:white; text-align:center; text-decoration:none; font-size:14px; display:flex; align-items:center; justify-content:center;'>Open WeChat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        jQuery('body').append(overlayContent);
     } else {
         jQuery('.sfsi_plus_wechat_follow_overlay').removeClass('hide').addClass('show');
     }

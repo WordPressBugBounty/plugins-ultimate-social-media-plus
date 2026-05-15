@@ -540,6 +540,33 @@
     </div>
     <!-- END INSTAGRAM ICON -->
 
+    <!-- THREADS ICON -->
+    <div class="row sfsiplus_threads_section">
+        <h2 class="sfsicls_threads"><?php _e( 'Threads', 'ultimate-social-media-plus' ); ?></h2>
+        <div class="inr_cont">
+            <p>
+				<?php _e( 'When clicked on, users can share your content on their Threads.', 'ultimate-social-media-plus' ); ?>
+            </p>
+<!--            <p class="radio_section fb_url">-->
+<!--                <input name="sfsi_plus_threads_page" --><?php //echo ($option2['sfsi_plus_threads_page'] ?? '') == 'yes' ? 'checked' : '';?><!--  type="checkbox" value="yes" class="styled"  />-->
+<!--                <label>-->
+<!--					--><?php //_e( 'Visit my Threads page at:', 'ultimate-social-media-plus' ); ?>
+<!--                </label>-->
+<!--                <input name="sfsi_plus_threads_pageUrl" type="url" placeholder="http://"  value="--><?php //echo $option2['sfsi_plus_threads_pageUrl'] ?? ''; ;?><!--" class="add" />-->
+<!--            </p>-->
+            <div class="pint_url">
+                <p class="radio_section fb_url">
+                    <input name="sfsi_plus_threads_share" <?php echo ($option2['sfsi_plus_threads_share']??'no'=='yes') ? 'checked="true"' : '' ;?>  type="checkbox" value="yes" class="styled"  />
+                    <label class="sfsi_label_threads">
+						<?php _e( 'Share my blog with friends (on Threads)', 'ultimate-social-media-plus' ); ?>
+                    </label>
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <!-- END THREADS ICON -->
+
     <!-- ria ICON -->
     <div class="row sfsiplus_ria_section">
 
@@ -760,6 +787,37 @@
 		</div>
     </div>
     <!-- VK ICON -->
+
+    <!-- BLUESKY ICON -->
+    <div class="row sfsiplus_bluesky_section">
+        <h2 class="sfsicls_bluesky"><?php _e( 'Bluesky', 'ultimate-social-media-plus' ); ?></h2>
+        <div class="inr_cont">
+            <p>
+				<?php _e( 'When clicked on, users can share your content on their Bluesky.', 'ultimate-social-media-plus' ); ?>
+            </p>
+<!--            <p class="radio_section fb_url">-->
+<!--                <input name="sfsi_plus_bluesky_page" --><?php //echo ( $option2['sfsi_plus_bluesky_page'] ?? '' ) == 'yes' ? 'checked' : ''; ?>
+<!--                       type="checkbox" value="yes" class="styled"/>-->
+<!--                <label>-->
+<!--					--><?php //_e( 'Visit my Bluesky page at:', 'ultimate-social-media-plus' ); ?>
+<!--                </label>-->
+<!--                <input name="sfsi_plus_bluesky_pageUrl" type="url" placeholder="http://"-->
+<!--                       value="--><?php //echo $option2['sfsi_plus_bluesky_pageUrl'] ?? '';; ?><!--" class="add"/>-->
+<!--            </p>-->
+            <div class="pint_url">
+                <p class="radio_section fb_url">
+                    <input name="sfsi_plus_bluesky_share" <?php echo ( $option2['sfsi_plus_bluesky_share'] ?? 'no' == 'yes' ) ? 'checked="true"' : ''; ?>
+                           type="checkbox" value="yes" class="styled"/>
+                    <label class="sfsi_label_bluesky">
+	                    <?php _e( 'Share my blog with friends (on Bluesky)', 'ultimate-social-media-plus' ); ?>
+                    </label>
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <!-- END BLUESKY ICON -->
+
 
     <div class="row sfsiplus_wechat_section" style="display: <?php echo isset($option1["sfsi_plus_wechat_display"])&&$option1["sfsi_plus_wechat_display"]=="yes"?'block':'none';  ?>">
 

@@ -741,7 +741,7 @@
             // Pass nonce to JS
             wp_localize_script('inisev-promotion-script', 'invr_recommendation', [
               'nonce' => wp_create_nonce('invr_recommendation'),
-            ], true);
+            ]);
 
           }
 

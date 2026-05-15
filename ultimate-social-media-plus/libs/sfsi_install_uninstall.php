@@ -440,6 +440,15 @@ function sfsi_plus_update_plugin()
       if(!isset($option5['sfsi_plus_inhaIcon_order'])){
         $option5['sfsi_plus_inhaIcon_order'] = '32';
       }
+
+      if(!isset($option5['sfsi_plus_threadsIcon_order'])){
+        $option5['sfsi_plus_threadsIcon_order'] = '35';
+      }
+
+      if(!isset($option5['sfsi_plus_blueskyIcon_order'])){
+        $option5['sfsi_plus_blueskyIcon_order'] = '36';
+      }
+
         if(!isset($option5['sfsi_icons_suppress_errors'])){
 
         	$sup_errors = "no";
@@ -516,6 +525,14 @@ function sfsi_plus_update_plugin()
 
       if(!isset($option1['sfsi_plus_ria_display'])){
         $option1['sfsi_plus_ria_display'] = 'no';
+      }
+
+      if(!isset($option1['sfsi_plus_threads_display'])){
+        $option1['sfsi_plus_threads_display'] = 'no';
+      }
+
+      if(!isset($option1['sfsi_plus_bluesky_display'])){
+        $option1['sfsi_plus_bluesky_display'] = 'no';
       }
 
 
@@ -714,6 +731,8 @@ function sfsi_plus_activate_plugin()
           'sfsi_custom_files'=>'',
 		  'sfsi_plus_premium_icons_box' =>'yes',
 		  'sfsi_plus_whatsapp_display'=>'no',
+		  'sfsi_plus_threads_display'=>'no',
+		  'sfsi_plus_bluesky_display'=>'no',
 
           );
 	add_option('sfsi_plus_section1_options',  serialize($options1));
@@ -816,6 +835,12 @@ function sfsi_plus_activate_plugin()
         'sfsi_plus_twitter_countsDisplay'=>'no',
         'sfsi_plus_twitter_countsFrom'=>'manual',
         'sfsi_plus_twitter_manualCounts'=>'20',
+        'sfsi_plus_bluesky_countsDisplay'=>'no',
+        'sfsi_plus_bluesky_countsFrom'=>'manual',
+        'sfsi_plus_bluesky_manualCounts'=>'20',
+        'sfsi_plus_threads_countsDisplay'=>'no',
+        'sfsi_plus_threads_countsFrom'=>'manual',
+        'sfsi_plus_threads_manualCounts'=>'20',
         'sfsi_plus_google_api_key'=>'',
         'sfsi_plus_linkedIn_countsDisplay'=>'no',
         'sfsi_plus_linkedIn_countsFrom'=>'manual',
@@ -901,6 +926,8 @@ function sfsi_plus_activate_plugin()
         'sfsi_plus_copylinkIcon_order' => '30',
 		'sfsi_plus_riaIcon_order'=>'31',
 		'sfsi_plus_inhaIcon_order'=>'32',
+		'sfsi_plus_threadsIcon_order'=>'35',
+		'sfsi_plus_blueskyIcon_order'=>'36',
         'sfsi_plus_CustomIcons_order'=>'',
         'sfsi_plus_rss_MouseOverText'=>'RSS',
         'sfsi_plus_email_MouseOverText'=>'Follow by Email',

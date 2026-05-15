@@ -257,6 +257,24 @@ $option1['sfsi_plus_mastodon_display'] = (isset($option1['sfsi_plus_mastodon_dis
         </li>
         <!-- END INSTAGRAM ICON -->
 
+        <!-- THREADS ICON -->
+        <li class="vertical-align">
+            <div>
+                <div class="radio_section tb_4_ck"><input name="sfsi_plus_threads_display" <?php echo (isset($option1['sfsi_plus_threads_display']) && $option1['sfsi_plus_threads_display'] == 'yes') ? 'checked="true"' : ''; ?>
+                                                          id="sfsi_plus_threads_display" type="checkbox" value="yes" class="styled" /></div>
+                <span class="sfsicls_threads">
+                    <?php _e( 'Threads', 'ultimate-social-media-plus' ); ?>
+                </span>
+            </div>
+            <div class="sfsiplus_right_info">
+                <p>
+                    <span><?php _e( 'It depends:', 'ultimate-social-media-plus' ); ?></span>
+                    <?php _e( 'Use this icon if you want users to share your content on Threads.', 'ultimate-social-media-plus' ); ?>
+                </p>
+            </div>
+        </li>
+        <!-- END THREADS ICON -->
+
         <!-- RIA ICON -->
         <li class="vertical-align">
             <div>
@@ -374,6 +392,23 @@ $option1['sfsi_plus_mastodon_display'] = (isset($option1['sfsi_plus_mastodon_dis
             </div>
         </li>
         <!-- END VK ICON -->
+        <!-- BLUESKY ICON -->
+        <li class="vertical-align">
+            <div>
+                <div class="radio_section tb_4_ck">
+                    <input name="sfsi_plus_bluesky_display" <?php echo (isset($option1['sfsi_plus_bluesky_display']) && $option1['sfsi_plus_bluesky_display'] == 'yes') ? 'checked="true"' : ''; ?>
+                           id="sfsi_plus_bluesky_display" type="checkbox" value="yes" class="styled"/>
+                </div>
+                <span class="sfsicls_bluesky"><?php _e( 'Bluesky', 'ultimate-social-media-plus' ); ?></span>
+            </div>
+            <div class="sfsiplus_right_info">
+                <p>
+                    <span><?php _e( 'It depends:', 'ultimate-social-media-plus' ); ?></span>
+                    <?php _e( 'Use this icon if you want users to share your content on Bluesky or visit your account.', 'ultimate-social-media-plus' ); ?>
+                </p>
+            </div>
+        </li>
+        <!-- END BLUESKY ICON -->
 
         <!-- WeChat ICON -->
         <li class="vertical-align">
@@ -426,7 +461,7 @@ $option1['sfsi_plus_mastodon_display'] = (isset($option1['sfsi_plus_mastodon_dis
             </div>
         </li>
         <!-- END Weibo ICON -->
-        
+
         <!-- Copy ICON -->
         <li class="vertical-align">
 	        <div>

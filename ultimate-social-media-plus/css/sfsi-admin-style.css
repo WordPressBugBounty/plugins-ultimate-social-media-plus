@@ -54,7 +54,9 @@ body {
 .tab1 ul.plus_icn_listing li .sfsicls_wechat,
 .tab1 ul.plus_icn_listing li .sfsicls_whatsapp,
 .tab1 ul.plus_icn_listing li .sfsicls_copylink,
-.tab1 ul.plus_icn_listing li .sfsicls_mastodon {
+.tab1 ul.plus_icn_listing li .sfsicls_mastodon,
+.tab1 ul.plus_icn_listing li .sfsicls_bluesky,
+.tab1 ul.plus_icn_listing li .sfsicls_threads {
     background: url(../images/tab_1_icn_list.png) no-repeat;
     float: left;
     padding: 0 0 0 59px;
@@ -168,6 +170,27 @@ body {
     -moz-background-size: contain;
     -o-background-size: contain;
     background-size: contain;
+}
+
+.plus_icn_listing .sfsicls_threads, h2.sfsicls_threads {
+    background-image: url('../images/icons_theme/default/default_threads.png') !important;
+    -webkit-background-size: contain !important;
+    -moz-background-size: contain !important;
+    -o-background-size: contain !important;
+    background-size: contain !important;
+}
+
+.plus_icn_listing .sfsicls_threads, .plus_icn_listing .sfsicls_bluesky {
+    background-position-x: 5% !important;
+}
+
+
+h2.sfsicls_bluesky, .plus_icn_listing .sfsicls_bluesky {
+    background-image: url('../images/icons_theme/default/default_bluesky.png') !important;
+    -webkit-background-size: contain !important;
+    -moz-background-size: contain !important;
+    -o-background-size: contain !important;
+    background-size: contain !important;
 }
 
 .sfsicls_ria {
@@ -304,7 +327,9 @@ ul.sfsiplus_icn_listing8 li .sfsiplus_right_info a {
 .tab2 .row h2.sfsicls_copylink,
 .tab2 .row h2.sfsicls_mastodon,
 .tab2 .row h2.sfsicls_ria,
-.tab2 .row h2.sfsicls_inha{
+.tab2 .row h2.sfsicls_inha,
+.tab2 .row h2.sfsicls_bluesky,
+.tab2 .row h2.sfsicls_threads {
     background: url(../images/tab_1_icn_list.png) no-repeat;
     padding: 10px 0 0 70px;
     margin: 15px 0 7px 21px;
@@ -1007,7 +1032,39 @@ ul.tab_2_email_sec li .radio {
 .sfsiplus_icns_tab_3 .sfsiplus_row_13_31,
 .sfsiplus_icns_tab_3 .sfsiplus_row_14_31,
 .sfsiplus_icns_tab_3 .sfsiplus_row_15_31,
-.sfsiplus_icns_tab_3 .sfsiplus_row_16_31{
+.sfsiplus_icns_tab_3 .sfsiplus_row_16_31,
+.sfsiplus_icns_tab_3 .sfsiplus_row_1_32,
+.sfsiplus_icns_tab_3 .sfsiplus_row_1_33,
+.sfsiplus_icns_tab_3 .sfsiplus_row_2_32,
+.sfsiplus_icns_tab_3 .sfsiplus_row_2_33,
+.sfsiplus_icns_tab_3 .sfsiplus_row_3_32,
+.sfsiplus_icns_tab_3 .sfsiplus_row_3_33,
+.sfsiplus_icns_tab_3 .sfsiplus_row_4_32,
+.sfsiplus_icns_tab_3 .sfsiplus_row_4_33,
+.sfsiplus_icns_tab_3 .sfsiplus_row_5_32,
+.sfsiplus_icns_tab_3 .sfsiplus_row_5_33,
+.sfsiplus_icns_tab_3 .sfsiplus_row_6_32,
+.sfsiplus_icns_tab_3 .sfsiplus_row_6_33,
+.sfsiplus_icns_tab_3 .sfsiplus_row_7_32,
+.sfsiplus_icns_tab_3 .sfsiplus_row_7_33,
+.sfsiplus_icns_tab_3 .sfsiplus_row_8_32,
+.sfsiplus_icns_tab_3 .sfsiplus_row_8_33,
+.sfsiplus_icns_tab_3 .sfsiplus_row_9_32,
+.sfsiplus_icns_tab_3 .sfsiplus_row_9_33,
+.sfsiplus_icns_tab_3 .sfsiplus_row_10_32,
+.sfsiplus_icns_tab_3 .sfsiplus_row_10_33,
+.sfsiplus_icns_tab_3 .sfsiplus_row_11_32,
+.sfsiplus_icns_tab_3 .sfsiplus_row_11_33,
+.sfsiplus_icns_tab_3 .sfsiplus_row_12_32,
+.sfsiplus_icns_tab_3 .sfsiplus_row_12_33,
+.sfsiplus_icns_tab_3 .sfsiplus_row_13_32,
+.sfsiplus_icns_tab_3 .sfsiplus_row_13_33,
+.sfsiplus_icns_tab_3 .sfsiplus_row_14_32,
+.sfsiplus_icns_tab_3 .sfsiplus_row_14_33,
+.sfsiplus_icns_tab_3 .sfsiplus_row_15_32,
+.sfsiplus_icns_tab_3 .sfsiplus_row_15_33,
+.sfsiplus_icns_tab_3 .sfsiplus_row_16_32,
+.sfsiplus_icns_tab_3 .sfsiplus_row_16_33 {
     background: url(../images/tab_3_icns.png) no-repeat;
     width: 53px;
     height: 52px;
@@ -1085,6 +1142,16 @@ ul.tab_2_email_sec li .radio {
 
 .sfsiplus_icns_tab_3 .sfsiplus_row_1_31 {
     background-position: -1234px 0;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_1_32 {
+    background: url(../images/icons_theme/default/default_threads.png) no-repeat !important;
+    background-size: contain !important;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_1_33 {
+    background: url(../images/icons_theme/default/default_bluesky.png) no-repeat !important;
+    background-size: contain !important;
 }
 
 .sfsiplus_icns_tab_3 .sfsiplus_row_1_28 {
@@ -1167,6 +1234,174 @@ ul.tab_2_email_sec li .radio {
 
 .sfsiplus_icns_tab_3 .sfsiplus_row_2_28 {
     background-image: url(../images/icons_theme/flat/flat_mastodon.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_3_32 {
+    background-image: url(../images/icons_theme/thin/thin_threads.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_3_33 {
+    background-image: url(../images/icons_theme/thin/thin_bluesky.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_4_32 {
+    background-image: url(../images/icons_theme/cute/cute_threads.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_4_33 {
+    background-image: url(../images/icons_theme/cute/cute_bluesky.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_5_32 {
+    background-image: url(../images/icons_theme/cubes/cubes_threads.png);
+    background-position: 0;
+    background-size: 82%;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_5_33 {
+    background-image: url(../images/icons_theme/cubes/cubes_bluesky.png);
+    background-position: 0;
+    background-size: 82%;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_6_32 {
+    background-image: url(../images/icons_theme/chrome_blue/chrome_blue_threads.png);
+    background-position: 0 -1px;
+    background-size: 96%;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_6_33 {
+    background-image: url(../images/icons_theme/chrome_blue/chrome_blue_bluesky.png);
+    background-position: 0 -1px;
+    background-size: 96%;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_7_32 {
+    background-image: url(../images/icons_theme/chrome_grey/chrome_grey_threads.png);
+    background-position: 0 -1px;
+    background-size: 96%;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_7_33 {
+    background-image: url(../images/icons_theme/chrome_grey/chrome_grey_bluesky.png);
+    background-position: 0 -1px;
+    background-size: 96%;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_8_32 {
+    background-image: url(../images/icons_theme/splash/splash_threads.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_8_33 {
+    background-image: url(../images/icons_theme/splash/splash_bluesky.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_9_32 {
+    background-image: url(../images/icons_theme/orange/orange_threads.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_9_33 {
+    background-image: url(../images/icons_theme/orange/orange_bluesky.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_10_32 {
+    background-image: url(../images/icons_theme/crystal/crystal_threads.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_10_33 {
+    background-image: url(../images/icons_theme/crystal/crystal_bluesky.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_11_32 {
+    background-image: url(../images/icons_theme/glossy/glossy_threads.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_11_33 {
+    background-image: url(../images/icons_theme/glossy/glossy_bluesky.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_12_32 {
+    background-image: url(../images/icons_theme/black/black_threads.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_12_33 {
+    background-image: url(../images/icons_theme/black/black_bluesky.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_13_32 {
+    background-image: url(../images/icons_theme/silver/silver_threads.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_13_33 {
+    background-image: url(../images/icons_theme/silver/silver_bluesky.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_14_32 {
+    background-image: url(../images/icons_theme/shaded_dark/shaded_dark_threads.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_14_33 {
+    background-image: url(../images/icons_theme/shaded_dark/shaded_dark_bluesky.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_15_32 {
+    background-image: url(../images/icons_theme/shaded_light/shaded_light_threads.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_15_33 {
+    background-image: url(../images/icons_theme/shaded_light/shaded_light_bluesky.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_16_32 {
+    background-image: url(../images/icons_theme/transparent/transparent_threads.png);
+    background-position: 0;
+    background-size: contain;
+}
+
+.sfsiplus_icns_tab_3 .sfsiplus_row_16_33 {
+    background-image: url(../images/icons_theme/transparent/transparent_bluesky.png);
     background-position: 0;
     background-size: contain;
 }
@@ -1610,7 +1845,7 @@ ul.tab_2_email_sec li .radio {
 }
 
 .sfsiplus_icns_tab_3 .sfsiplus_row_8_23 {
-    background-position: -845px -518px;
+    background-position: -845px -520px;
 }
 
 .sfsiplus_icns_tab_3 .sfsiplus_row_8_24 {
@@ -1844,7 +2079,7 @@ ul.tab_2_email_sec li .radio {
 }
 
 .sfsiplus_icns_tab_3 .sfsiplus_row_11_23 {
-    background-position: -845px -740px;
+    background-position: -843px -742px;
 }
 
 .sfsiplus_icns_tab_3 .sfsiplus_row_11_24 {
@@ -2466,7 +2701,7 @@ ul#adminmenu li.toplevel_page_sfsi-plus-options a.current:hover {
     align-items: center;
 }
 
-.tab9 .row_tab div.sfsi_plus_field label{
+.tab9 .row_tab div.sfsi_plus_field label {
     padding-right: 10px;
 }
 
@@ -6793,11 +7028,12 @@ div#analyst-install-modal * {
     background-size: contain;
 }
 
-.ui-sortable-handle img{
+.ui-sortable-handle img {
     width: 54px;
     height: 54px;
 }
-.like_icon img{
+
+.like_icon img {
     width: 54px;
     height: 54px;
 }

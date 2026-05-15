@@ -2,8 +2,8 @@
 Contributors: socialsharepro, socialtech
 Tags: Share, sharing, share buttons, share button, share social media
 Requires at least: 3.0
-Tested up to: 6.7.2
-Stable tag: 3.7.1
+Tested up to: 6.9.4
+Stable tag: 3.7.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -297,6 +297,11 @@ The premium plugin offers many more social buttons from other social media platf
 9. You can also display a pop-up (designed to your liking) which asks users to like & share your site
 
 == Changelog ==
+= 3.7.2 =
+* Tested up to wordpress 6.9.4
+* Added threads and bluesky icons
+* Fix fatal error when using certain translations
+* Other improvements
 
 = 3.7.1 =
 * Fixed bug related to Pinterest icons
@@ -487,8 +492,8 @@ The premium plugin offers many more social buttons from other social media platf
 ** Changelog truncated due to WordPress 5000-character limit.
 
 == Upgrade Notice ==
-
-= 3.7.1 =
-* Fixed bug related to Pinterest icons
-* Quality improvements
-* Improved stability
+= 3.7.2 =
+* Tested up to wordpress 6.9.4
+* Added threads and bluesky icons
+* Fix fatal error when using certain translations
+* Other improvements

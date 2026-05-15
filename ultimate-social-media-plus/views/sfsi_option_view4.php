@@ -52,6 +52,26 @@
 	$option4['sfsi_plus_twitter_manualCounts'] 		= 	(isset($option4['sfsi_plus_twitter_manualCounts']))
 															? intval($option4['sfsi_plus_twitter_manualCounts'])
 															: '';
+
+	$option4['sfsi_plus_bluesky_countsDisplay'] 	= 	(isset($option4['sfsi_plus_bluesky_countsDisplay']))
+															? sanitize_text_field($option4['sfsi_plus_bluesky_countsDisplay'])
+															: '';
+	$option4['sfsi_plus_bluesky_countsFrom'] 		= 	(isset($option4['sfsi_plus_bluesky_countsFrom']))
+															? sanitize_text_field($option4['sfsi_plus_bluesky_countsFrom'])
+															: '';
+	$option4['sfsi_plus_bluesky_manualCounts'] 		= 	(isset($option4['sfsi_plus_bluesky_manualCounts']))
+															? intval($option4['sfsi_plus_bluesky_manualCounts'])
+															: '';
+
+	$option4['sfsi_plus_threads_countsDisplay'] 	= 	(isset($option4['sfsi_plus_threads_countsDisplay']))
+															? sanitize_text_field($option4['sfsi_plus_threads_countsDisplay'])
+															: '';
+	$option4['sfsi_plus_threads_countsFrom'] 		= 	(isset($option4['sfsi_plus_threads_countsFrom']))
+															? sanitize_text_field($option4['sfsi_plus_threads_countsFrom'])
+															: '';
+	$option4['sfsi_plus_threads_manualCounts'] 		= 	(isset($option4['sfsi_plus_threads_manualCounts']))
+															? intval($option4['sfsi_plus_threads_manualCounts'])
+															: '';
 	$option4['sfsiplus_tw_consumer_key'] 			= 	(isset($option4['sfsiplus_tw_consumer_key']))
 															? sfsi_plus_sanitize_field($option4['sfsiplus_tw_consumer_key'])
 															: '';
@@ -228,6 +248,16 @@ $option4['sfsi_plus_inha_countsDisplay'] 		= 	(isset($option4['sfsi_plus_inha_co
         <li class="sfsiplus_twitter_section">
 			<a href="#" title="X/Twitter">
 				<img src="<?php echo SFSI_PLUS_PLUGURL ?>images/twitter.png" alt="Twitter" />
+			</a><span>12k</span>
+		</li>
+        <li class="sfsiplus_threads_section">
+			<a href="#" title="Threads">
+				<img src="<?php echo SFSI_PLUS_PLUGURL ?>images/threads.png" alt="Threads" />
+			</a><span>12k</span>
+		</li>
+        <li class="sfsiplus_bluesky_section">
+			<a href="#" title="Bluesky">
+				<img src="<?php echo SFSI_PLUS_PLUGURL ?>images/bluesky.png" alt="Bluesky" />
 			</a><span>12k</span>
 		</li>
         <li class="sfsiplus_youtube_section">
@@ -560,6 +590,62 @@ $option4['sfsi_plus_inha_countsDisplay'] 		= 	(isset($option4['sfsi_plus_inha_co
 			</div>    
 		</div>  
 		<!--END TWITTER ICON COUNT SECTION-->
+
+        <!-- THREADS ICON COUNT SECTION-->
+        <div class="sfsiplus_specify_counts sfsiplus_threads_section">
+            <div class="radio_section">
+                <input name="sfsi_plus_threads_countsDisplay" <?php echo ($option4['sfsi_plus_threads_countsDisplay']=='yes') ?  'checked="true"' : '' ;?>  type="checkbox" value="yes" class="styled"  />
+            </div>
+            <div class="social_icon_like">
+                <ul class="like_icon">
+                    <li>
+                        <a title="Threads">
+                            <img src="<?php echo SFSI_PLUS_PLUGURL ?>images/threads.png" alt="Threads" />
+                            <span><?php echo $counts['threads_count']; ?></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="listing">
+                <ul>
+                    <li>
+                        <input name="sfsi_plus_threads_countsFrom" <?php echo ($option4['sfsi_plus_threads_countsFrom']=='manual' || $option4['sfsi_plus_threads_countsFrom']=='follower') ?  'checked="true"' : '' ;?>  type="radio" value="manual" class="styled" />
+						<?php  _e( 'Enter the figure manually', 'ultimate-social-media-plus' ); ?>
+                        <input name="sfsi_plus_threads_manualCounts" type="text" class="input" value="<?php echo ($option4['sfsi_plus_threads_manualCounts']!='') ?  $option4['sfsi_plus_threads_manualCounts'] : '' ;?>" style="<?php echo ($option4['sfsi_plus_threads_countsFrom']=='follower') ?  'display:none;' : '' ;?>" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- END THREADS ICON COUNT SECTION-->
+
+        <!-- BLUESKY ICON COUNT SECTION-->
+        <div class="sfsiplus_specify_counts sfsiplus_bluesky_section">
+            <div class="radio_section">
+                <input name="sfsi_plus_bluesky_countsDisplay" <?php echo ($option4['sfsi_plus_bluesky_countsDisplay']=='yes') ?  'checked="true"' : '' ;?>  type="checkbox" value="yes" class="styled"  />
+            </div>
+            <div class="social_icon_like">
+                <ul class="like_icon">
+                    <li>
+                        <a title="Bluesky">
+                            <img src="<?php echo SFSI_PLUS_PLUGURL ?>images/bluesky.png" alt="Bluesky" />
+                            <span><?php echo $counts['bluesky_count']; ?></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="listing">
+                <ul>
+                    <li>
+                        <input name="sfsi_plus_bluesky_countsFrom" <?php echo ($option4['sfsi_plus_bluesky_countsFrom']=='manual' || $option4['sfsi_plus_bluesky_countsFrom']=='follower') ?  'checked="true"' : '' ;?>  type="radio" value="manual" class="styled" />
+						<?php  _e( 'Enter the figure manually', 'ultimate-social-media-plus' ); ?>
+                        <input name="sfsi_plus_bluesky_manualCounts" type="text" class="input" value="<?php echo ($option4['sfsi_plus_bluesky_manualCounts']!='') ?  $option4['sfsi_plus_bluesky_manualCounts'] : '' ;?>" style="<?php echo ($option4['sfsi_plus_bluesky_countsFrom']=='follower') ?  'display:none;' : '' ;?>" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- END BLUESKY ICON COUNT SECTION-->
         
 		<!-- LINKEDIN ICON COUNT SECTION-->
 		<div class="sfsiplus_specify_counts sfsiplus_linkedin_section">

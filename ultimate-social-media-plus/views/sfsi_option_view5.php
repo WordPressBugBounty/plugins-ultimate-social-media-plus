@@ -20,39 +20,45 @@
 			$option5['sfsi_plus_pinterestIcon_order']	=>'pinterest',
 			$option5['sfsi_plus_instagramIcon_order']	=>'instagram',
 
-			(isset($option5['sfsi_plus_houzzIcon_order']))
-			? $option5['sfsi_plus_houzzIcon_order']
-			: 11 => 'houzz',
-			(isset($option5['sfsi_plus_okIcon_order']))
-			? $option5['sfsi_plus_okIcon_order']
-			: 22 => 'ok',
-			(isset($option5['sfsi_plus_telegramIcon_order']))
-			? $option5['sfsi_plus_telegramIcon_order']
-			: 23 => 'telegram',
-			(isset($option5['sfsi_plus_vkIcon_order']))
-			? $option5['sfsi_plus_vkIcon_order']
-			: 24 => 'vk',
-			(isset($option5['sfsi_plus_wechatIcon_order']))
-			? $option5['sfsi_plus_wechatIcon_order']
-			: 26 => 'wechat',
-			(isset($option5['sfsi_plus_weiboIcon_order']))
-			? $option5['sfsi_plus_weiboIcon_order']
-			: 25 => 'weibo',
-			(isset($option5['sfsi_plus_whatsappIcon_order']))
-			? $option5['sfsi_plus_whatsappIcon_order']
-			: 27 => 'whatsapp',
-			(isset($option5['sfsi_plus_copylinkIcon_order']))
-			? $option5['sfsi_plus_copylinkIcon_order']
-			: 30 => 'copylink',
-			(isset($option5['sfsi_plus_mastodonIcon_order']))
-			? $option5['sfsi_plus_mastodonIcon_order']
-			: 29 => 'mastodon',
-        (isset($option5['sfsi_plus_riaIcon_order']))
-            ? $option5['sfsi_plus_riaIcon_order']
-            : 31 => 'ria',
-        (isset($option5['sfsi_plus_inhaIcon_order']))
-            ? $option5['sfsi_plus_inhaIcon_order']
-            : 32 => 'inha',
+			( isset( $option5['sfsi_plus_houzzIcon_order'] ) )
+				? $option5['sfsi_plus_houzzIcon_order']
+				: 11 => 'houzz',
+			( isset( $option5['sfsi_plus_okIcon_order'] ) )
+				? $option5['sfsi_plus_okIcon_order']
+				: 22 => 'ok',
+			( isset( $option5['sfsi_plus_telegramIcon_order'] ) )
+				? $option5['sfsi_plus_telegramIcon_order']
+				: 23 => 'telegram',
+			( isset( $option5['sfsi_plus_vkIcon_order'] ) )
+				? $option5['sfsi_plus_vkIcon_order']
+				: 24 => 'vk',
+			( isset( $option5['sfsi_plus_wechatIcon_order'] ) )
+				? $option5['sfsi_plus_wechatIcon_order']
+				: 26 => 'wechat',
+			( isset( $option5['sfsi_plus_weiboIcon_order'] ) )
+				? $option5['sfsi_plus_weiboIcon_order']
+				: 25 => 'weibo',
+			( isset( $option5['sfsi_plus_whatsappIcon_order'] ) )
+				? $option5['sfsi_plus_whatsappIcon_order']
+				: 27 => 'whatsapp',
+			( isset( $option5['sfsi_plus_copylinkIcon_order'] ) )
+				? $option5['sfsi_plus_copylinkIcon_order']
+				: 30 => 'copylink',
+			( isset( $option5['sfsi_plus_mastodonIcon_order'] ) )
+				? $option5['sfsi_plus_mastodonIcon_order']
+				: 29 => 'mastodon',
+			( isset( $option5['sfsi_plus_riaIcon_order'] ) )
+				? $option5['sfsi_plus_riaIcon_order']
+				: 31 => 'ria',
+			( isset( $option5['sfsi_plus_inhaIcon_order'] ) )
+				? $option5['sfsi_plus_inhaIcon_order']
+				: 32 => 'inha',
+			( isset( $option5['sfsi_plus_threadsIcon_order'] ) )
+				? $option5['sfsi_plus_threadsIcon_order']
+				: 35 => 'threads',
+			( isset( $option5['sfsi_plus_blueskyIcon_order'] ) )
+				? $option5['sfsi_plus_blueskyIcon_order']
+				: 36 => 'bluesky',
 	);
 	// var_dump($icons_order);
 
@@ -149,7 +155,7 @@ $option5['sfsi_plus_inha_MouseOverText']= 	(isset($option5['sfsi_plus_inha_Mouse
 														: '';
 	$option5['sfsi_plus_copylink_MouseOverText']		= (isset($option5['sfsi_plus_copylink_MouseOverText']))
 														? sanitize_text_field($option5['sfsi_plus_copylink_MouseOverText'])
-														: '';														
+														: '';
 
 	//MZ CODE END
 	$option5['sfsi_plus_houzz_MouseOverText']	= 	(isset($option5['sfsi_plus_houzz_MouseOverText']))
@@ -483,6 +489,12 @@ $option5['sfsi_plus_inha_MouseOverText']= 	(isset($option5['sfsi_plus_inha_Mouse
                 </li>
           <?php break; ?>
 
+          <?php case 'threads' :?>
+          		<li class="sfsiplus_threads_section " data-index="<?php echo $index; ?>" id="sfsi_plus_threadsIcon_order">
+                	<a href="#" title="Threads" ><img src="<?php echo SFSI_PLUS_PLUGURL; ?>images/threads.png" alt="Threads" /></a>
+                </li>
+          <?php break; ?>
+
           <?php case 'houzz' :?>
           		<li class="sfsiplus_houzz_section " data-index="<?php echo $index; ?>" id="sfsi_plus_houzzIcon_order">
                 	<a href="#" title="Houzz" ><img src="<?php echo SFSI_PLUS_PLUGURL; ?>images/houzz.png" alt="Houzz" /></a>
@@ -508,6 +520,11 @@ $option5['sfsi_plus_inha_MouseOverText']= 	(isset($option5['sfsi_plus_inha_Mouse
                 </li>
 		  <?php break; ?>
 
+		  <?php case 'bluesky' :?>
+          		<li class="sfsiplus_bluesky_section " data-index="<?php echo $index; ?>" id="sfsi_plus_blueskyIcon_order">
+                	<a href="#" title="Bluesky" ><img src="<?php echo SFSI_PLUS_PLUGURL; ?>images/bluesky.png" alt="Bluesky" /></a>
+                </li>
+		  <?php break; ?>
 
 		  <?php case 'weibo' :?>
           		<li class="sfsiplus_weibo_section " data-index="<?php echo $index; ?>" id="sfsi_plus_weiboIcon_order">
@@ -1138,6 +1155,21 @@ $option5['sfsi_plus_inha_MouseOverText']= 	(isset($option5['sfsi_plus_inha_Mouse
                         Instagram:
                     </label>
                     <input name="sfsi_plus_instagram_MouseOverText" value="<?php echo ($option5['sfsi_plus_instagram_MouseOverText']!='') ?  $option5['sfsi_plus_instagram_MouseOverText'] : '' ;?>" type="text" />
+                </div>
+			</div>
+        	<div class="clear">
+
+                <div class="mouseover_field sfsiplus_threads_section">
+                    <label>
+                        Threads:
+                    </label>
+                    <input name="sfsi_plus_threads_MouseOverText" value="<?php echo (isset( $option5['sfsi_plus_threads_MouseOverText']) && $option5['sfsi_plus_threads_MouseOverText']!='') ?  $option5['sfsi_plus_threads_MouseOverText'] : '' ;?>" type="text" />
+				</div>
+				<div class="mouseover_field sfsiplus_bluesky_section">
+                    <label>
+                        Bluesky:
+                    </label>
+                    <input name="sfsi_plus_bluesky_MouseOverText" value="<?php echo (isset($option5['sfsi_plus_bluesky_MouseOverText']) && $option5['sfsi_plus_bluesky_MouseOverText']!='') ?  $option5['sfsi_plus_bluesky_MouseOverText'] : '' ;?>" type="text" />
                 </div>
 			</div>
 

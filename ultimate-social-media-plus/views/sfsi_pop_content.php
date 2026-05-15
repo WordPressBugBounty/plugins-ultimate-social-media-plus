@@ -313,6 +313,54 @@ $pin_url= isset($option2['sfsi_pinterest_pageUrl']) && !empty($option2['sfsi_pin
 </div>
 <!-- END Pinterest  example pop up -->
 
+<!-- Threads  example pop up -->
+<div class="pop-overlay read-overlay threadsex-s2" >
+    <div class="pop_up_box_ex sfsi_pop_up adPopWidth" >
+        <img alt="threads logo" src="<?php echo SFSI_PLUS_PLUGURL; ?>images/close.jpg" id="close_popup" class="sfsicloseBtn" />
+    	<h4 id="readmore_text">
+        	<?php  _e( 'Move over the Threads-icon…', 'ultimate-social-media-plus' ); ?>
+        </h4>
+
+     	<div class="adminTooltip" >
+        <a href="javascript:">
+        	<img width="51" class="sfsi_wicon" src="<?php echo SFSI_PLUS_PLUGURL; ?>images/pinterest.png" title="threads" alt="threads" />
+        </a>
+        <div class="sfsi_plus_tool_tip_2 sfsi_plus_tool_tip_2_inr sfsi_plus_threads_tool_bdr"  style=" width: 73px; margin-left: -45.5px;" >
+           <span class="bot_arow bot_threads_arow"></span>
+           <div class="sfsi_plus_inside">
+               <div class="prints_visit"><img src="<?php echo $visit_iconsUrl."pinterest.png"; ?>" /></div>
+               <div class="prints_visit_1"><img src="<?php echo $visit_iconsUrl."pinit_bck.png"; ?>" /></div>
+           </div>
+        </div>
+   	</div>
+  </div>
+</div>
+<!-- END Pinterest  example pop up -->
+
+<!-- Bluesky  example pop up -->
+<div class="pop-overlay read-overlay blueskyex-s2" >
+    <div class="pop_up_box_ex sfsi_pop_up adPopWidth" >
+        <img alt="bluesky logo" src="<?php echo SFSI_PLUS_PLUGURL; ?>images/close.jpg" id="close_popup" class="sfsicloseBtn" />
+    	<h4 id="readmore_text">
+        	<?php  _e( 'Move over the Bluesky-icon…', 'ultimate-social-media-plus' ); ?>
+        </h4>
+
+     	<div class="adminTooltip" >
+        <a href="javascript:">
+        	<img width="51" class="sfsi_wicon" src="<?php echo SFSI_PLUS_PLUGURL; ?>images/pinterest.png" title="bluesky" alt="bluesky" />
+        </a>
+        <div class="sfsi_plus_tool_tip_2 sfsi_plus_tool_tip_2_inr sfsi_plus_bluesky_tool_bdr"  style=" width: 73px; margin-left: -45.5px;" >
+           <span class="bot_arow bot_bluesky_arow"></span>
+           <div class="sfsi_plus_inside">
+               <div class="prints_visit"><img src="<?php echo $visit_iconsUrl."pinterest.png"; ?>" /></div>
+               <div class="prints_visit_1"><img src="<?php echo $visit_iconsUrl."pinit_bck.png"; ?>" /></div>
+           </div>
+        </div>
+   	</div>
+  </div>
+</div>
+<!-- END Bluesky  example pop up -->
+
 <?php
 	$linnked_share=($option2['sfsi_plus_linkedin_pageURL']!='') ?  $option2['sfsi_plus_linkedin_pageURL'] : 'https://www.linkedin.com/' ;
 	$linkedIncom=($option2['sfsi_plus_linkedin_followCompany']!='') ?  $option2['sfsi_plus_linkedin_followCompany'] : '904740' ;

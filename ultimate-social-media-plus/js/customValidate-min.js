@@ -5,6 +5,14 @@ function sfsi_plus_validationStep2() {
         if (sfsi_validator(SFSI('input[name="sfsi_plus_facebookPage_option"]'), "activte") && sfsi_validator(SFSI('input[name="sfsi_plus_facebookPage_option"]'), "checked") && !sfsi_validator(SFSI('input[name="sfsi_plus_facebookPage_url"]'), "blank")) return sfsiplus_showErrorSuc("error", "Error : Invalid Facebook page url ", 2), SFSI('input[name="sfsi_plus_facebookPage_url"]').addClass("inputError"), !1;
     }
 
+    if (SFSI(".tab2 > .sfsiplus_threads_section").css("display") === "block") {
+        if (sfsi_validator(SFSI('input[name="sfsi_plus_threads_page"]'), "activte") && sfsi_validator(SFSI('input[name="sfsi_plus_threads_page"]'), "checked") && !sfsi_validator(SFSI('input[name="sfsi_plus_threads_pageUrl"]'), "blank")) return sfsiplus_showErrorSuc("error", "Error : Invalid Threads page url ", 2), SFSI('input[name="sfsi_plus_threads_pageUrl"]').addClass("inputError"), !1;
+    }
+
+    if (SFSI(".tab2 > .sfsiplus_bluesky_section").css("display") === "block") {
+        if (sfsi_validator(SFSI('input[name="sfsi_plus_bluesky_page"]'), "activte") && sfsi_validator(SFSI('input[name="sfsi_plus_bluesky_page"]'), "checked") && !sfsi_validator(SFSI('input[name="sfsi_plus_bluesky_pageUrl"]'), "blank")) return sfsiplus_showErrorSuc("error", "Error : Invalid Threads page url ", 2), SFSI('input[name="sfsi_plus_bluesky_pageUrl"]').addClass("inputError"), !1;
+    }
+
     if (SFSI(".tab2 > .sfsiplus_twitter_section").css("display") === "block") {
         if (sfsi_validator(SFSI('input[name="sfsi_plus_twitter_followme"]'), "activte") && sfsi_validator(SFSI('input[name="sfsi_plus_twitter_followme"]'), "checked") && !sfsi_validator(SFSI('input[name="sfsi_plus_twitter_followUserName"]'), "blank")) return sfsiplus_showErrorSuc("error", "Error : Invalid Twitter UserName ", 2), SFSI('input[name="sfsi_plus_twitter_followUserName"]').addClass("inputError"), !1;
         if (sfsi_validator(SFSI('input[name="sfsi_plus_twitter_page"]'), "activte") && sfsi_validator(SFSI('input[name="sfsi_plus_twitter_page"]'), "checked") && !sfsi_validator(SFSI('input[name="sfsi_plus_twitter_pageURL"]'), "blank")) return sfsiplus_showErrorSuc("error", "Error : Invalid twitter page Url ", 2), SFSI('input[name="sfsi_plus_twitter_pageURL"]').addClass("inputError"), !1;
@@ -23,7 +31,7 @@ function sfsi_plus_validationStep2() {
     if (SFSI(".tab2 > .sfsiplus_instagram_section").css("display") === "block") {
         if (sfsi_validator(SFSI('input[name="sfsi_plus_instagram_display"]'), "checked") && !sfsi_validator(SFSI('input[name="sfsi_plus_instagram_pageUrl"]'), "blank")) return sfsiplus_showErrorSuc("error", "Error : Invalid Instagram url ", 2), SFSI('input[name="sfsi_plus_instagram_pageUrl"]').addClass("inputError"), !1;
     }
-    
+
     if (SFSI(".tab2 > .sfsiplus_ria_section").css("display") === "block") {
         if (sfsi_validator(SFSI('input[name="sfsi_plus_ria_display"]'), "checked") && !sfsi_validator(SFSI('input[name="sfsi_plus_ria_pageUrl"]'), "blank")) return sfsiplus_showErrorSuc("error", "Error : Invalid RateItAll url ", 2), SFSI('input[name="sfsi_plus_ria_pageUrl"]').addClass("inputError"), !1;
     }

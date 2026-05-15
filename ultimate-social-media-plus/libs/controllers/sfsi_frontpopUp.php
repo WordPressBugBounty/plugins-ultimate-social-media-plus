@@ -153,6 +153,12 @@ function sfsi_plus_FrontPopupDiv() {
 	if (!isset($sfsi_section5['sfsi_plus_whatsappIcon_order'])) {
 		$sfsi_section5['sfsi_plus_whatsappIcon_order'] = 27;
 	}
+	if (!isset($sfsi_section5['sfsi_plus_threadsIcon_order'])) {
+		$sfsi_section5['sfsi_plus_threadsIcon_order'] = 35;
+	}
+	if (!isset($sfsi_section5['sfsi_plus_blueskyIcon_order'])) {
+		$sfsi_section5['sfsi_plus_blueskyIcon_order'] = 36;
+	}
 	$custom_icons_order = maybe_unserialize($sfsi_section5['sfsi_plus_CustomIcons_order']);
 	$icons_order = array(
 		$sfsi_section5['sfsi_plus_rssIcon_order']	=> 'rss',
@@ -163,9 +169,11 @@ function sfsi_plus_FrontPopupDiv() {
 		$sfsi_section5['sfsi_plus_pinterestIcon_order'] => 'pinterest',
 		$sfsi_section5['sfsi_plus_linkedinIcon_order']	=> 'linkedin',
 		$sfsi_section5['sfsi_plus_instagramIcon_order'] => 'instagram',
+		$sfsi_section5['sfsi_plus_threadsIcon_order'] => 'threads',
 		$sfsi_section5['sfsi_plus_okIcon_order'] => 'ok',
 		$sfsi_section5['sfsi_plus_telegramIcon_order'] => 'telegram',
 		$sfsi_section5['sfsi_plus_vkIcon_order'] => 'vk',
+		$sfsi_section5['sfsi_plus_blueskyIcon_order'] => 'bluesky',
 		$sfsi_section5['sfsi_plus_weiboIcon_order'] => 'weibo',
 		$sfsi_section5['sfsi_plus_wechatIcon_order'] => 'wechat',
 		$sfsi_section5['sfsi_plus_whatsappIcon_order'] => 'whatsapp',
@@ -221,7 +229,8 @@ function sfsi_plus_FrontPopupDiv() {
 			$icon_arry = $icn;
 			$icn = "custom";
 		}
-		switch ($icn): case 'rss':
+		switch ($icn):
+            case 'rss':
 				if ($sfsi_plus_section1_options['sfsi_plus_rss_display'] == 'yes')  $icons .= "<li>" . sfsi_plus_prepairIcons('rss', 1) . "</li>";
 				break;
 			case 'email':
@@ -246,6 +255,9 @@ function sfsi_plus_FrontPopupDiv() {
 			case 'instagram':
 				if ($sfsi_plus_section1_options['sfsi_plus_instagram_display'] == 'yes')    $icons .= "<li>" . sfsi_plus_prepairIcons('instagram', 1) . "</li>";
 				break;
+			case 'threads':
+				if ($sfsi_plus_section1_options['sfsi_plus_threads_display'] == 'yes')    $icons .= "<li>" . sfsi_plus_prepairIcons('threads', 1) . "</li>";
+				break;
             case 'ria':
                 if ($sfsi_plus_section1_options['sfsi_plus_ria_display'] == 'yes')    $icons .= "<li>" . sfsi_plus_prepairIcons('ria', 1) . "</li>";
                 break;
@@ -268,6 +280,9 @@ function sfsi_plus_FrontPopupDiv() {
 				break;
 			case 'vk':
 				if (isset($sfsi_plus_section1_options['sfsi_plus_vk_display']) && $sfsi_plus_section1_options['sfsi_plus_vk_display'] == 'yes')    $icons .= "<li>" . sfsi_plus_prepairIcons('vk', 1) . "</li>";
+				break;
+			case 'bluesky':
+				if (isset($sfsi_plus_section1_options['sfsi_plus_bluesky_display']) && $sfsi_plus_section1_options['sfsi_plus_bluesky_display'] == 'yes')    $icons .= "<li>" . sfsi_plus_prepairIcons('bluesky', 1) . "</li>";
 				break;
 			case 'weibo':
 				if (isset($sfsi_plus_section1_options['sfsi_plus_weibo_display']) && $sfsi_plus_section1_options['sfsi_plus_weibo_display'] == 'yes')    $icons .= "<li>" . sfsi_plus_prepairIcons('weibo', 1) . "</li>";
