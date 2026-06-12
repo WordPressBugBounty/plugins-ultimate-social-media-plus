@@ -7,7 +7,7 @@ Author: social share pro
 Text Domain: ultimate-social-media-plus
 Domain Path: /languages
 Author URI: http://socialshare.pro/
-Version: 3.7.2
+Version: 3.7.3
 License: GPLv2
 */
 
@@ -59,7 +59,7 @@ if (!is_plugin_active('Ultimate-Premium-Plugin/usm_premium_icons.php')) {
 
 	global $wpdb;
 	/* define the Root for URL and Document */
-	define( 'SFSI_PLUS_PLUGIN_VERSION', '3.7.2' );
+	define( 'SFSI_PLUS_PLUGIN_VERSION', '3.7.3' );
 	define('SFSI_PLUS_DOCROOT',    dirname(__FILE__));
 	define('SFSI_PLUS_PLUGURL',    plugins_url('', __FILE__) . '/');
 	define('SFSI_PLUS_WEBROOT',    str_replace(getcwd(), home_url(), dirname(__FILE__)));
@@ -628,9 +628,9 @@ if (!is_plugin_active('Ultimate-Premium-Plugin/usm_premium_icons.php')) {
 		}
 		?>
 		<?php
-				include("views/sfsi_plugin_lists.php");
-				include("views/sfsi_other_banners.php");
-				include("views/sfsi_global_banners.php");
+				include_once("views/sfsi_plugin_lists.php");
+				include_once("views/sfsi_other_banners.php");
+				include_once("views/sfsi_global_banners.php");
 				if (get_option("sfsi_plus_show_premium_notification") == "yes" && isset($_GET['page']) && $_GET['page'] == "sfsi-plus-options") {
 					?>
 			<style>

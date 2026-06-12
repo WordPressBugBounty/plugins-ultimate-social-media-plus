@@ -1014,8 +1014,6 @@ function sfsi_plus_prepairIcons($icon_name, $is_front = 0, $onpost = "no", $from
                 }
             }
 
-            //set url to javascript:void(0); so when user clicks pintereset icon nothing happens
-            $url='javascript:void(0);';
             break;
 
         case "instagram":
