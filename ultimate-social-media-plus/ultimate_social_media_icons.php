@@ -7,7 +7,7 @@ Author: social share pro
 Text Domain: ultimate-social-media-plus
 Domain Path: /languages
 Author URI: http://socialshare.pro/
-Version: 3.7.3
+Version: 3.7.4
 License: GPLv2
 */
 
@@ -59,7 +59,13 @@ if (!is_plugin_active('Ultimate-Premium-Plugin/usm_premium_icons.php')) {
 
 	global $wpdb;
 	/* define the Root for URL and Document */
-	define( 'SFSI_PLUS_PLUGIN_VERSION', '3.7.3' );
+	define( 'SFSI_PLUS_PLUGIN_VERSION', '3.7.4' );
+
+	/* Graph API version used by every graph.facebook.com call. Meta retires a version
+	   about two years after release; v26.0 was released 29 July 2026. A call naming a
+	   retired version is served by whichever version is oldest at the time, so this has
+	   to be bumped rather than left to drift. */
+	define('SFSI_PLUS_FB_GRAPH_VERSION', 'v26.0');
 	define('SFSI_PLUS_DOCROOT',    dirname(__FILE__));
 	define('SFSI_PLUS_PLUGURL',    plugins_url('', __FILE__) . '/');
 	define('SFSI_PLUS_WEBROOT',    str_replace(getcwd(), home_url(), dirname(__FILE__)));
@@ -448,15 +454,6 @@ if (!is_plugin_active('Ultimate-Premium-Plugin/usm_premium_icons.php')) {
 						}
 						$icons_before .= "<div class='sf_subscrbe' style='display: inline-block;vertical-align: middle;width: auto;'>" . sfsi_plus_Subscribelike($permalink, $show_count) . "</div>";
 					}
-					if ($sfsi_section8['sfsi_plus_rectfb'] == 'yes' || $sfsi_section8['sfsi_plus_rectfbshare'] == 'yes') {
-						if ($show_count) { } else {
-							$sfsiLikeWithfb = "48px";
-						}
-						if (!isset($sfsiLikeWithfb)) {
-							$sfsiLikeWithfb = $sfsiLikeWith;
-						}
-						$icons_before .= "<div class='sf_fb' style='display: inline-block; vertical-align: middle;width: auto;'>" . sfsi_plus_FBlike($permalink, $show_count) . "</div>";
-					}
 					if ($sfsi_section8['sfsi_plus_rectfbshare'] == 'yes') {
 						if ($show_count) { } else {
 							$sfsiLikeWithfbshare = "48px";
@@ -530,15 +527,6 @@ if (!is_plugin_active('Ultimate-Premium-Plugin/usm_premium_icons.php')) {
 								$sfsiLikeWithsub = $sfsiLikeWith;
 							}
 							$icons_after .= "<div class='sf_subscrbe' style='display: inline-block;vertical-align: middle; width: auto;'>" . sfsi_plus_Subscribelike($permalink, $show_count) . "</div>";
-						}
-						if ($sfsi_section8['sfsi_plus_rectfb'] == 'yes' || $sfsi_section8['sfsi_plus_rectfbshare'] == 'yes') {
-							if ($show_count) { } else {
-								$sfsiLikeWithfb = "48px";
-							}
-							if (!isset($sfsiLikeWithfb)) {
-								$sfsiLikeWithfb = $sfsiLikeWith;
-							}
-							$icons_after .= "<div class='sf_fb' style='display: inline-block; vertical-align: middle;width: auto;'>" . sfsi_plus_FBlike($permalink, $show_count) . "</div>";
 						}
 						if ($sfsi_section8['sfsi_plus_rectfbshare'] == 'yes') {
 							if ($show_count) { } else {

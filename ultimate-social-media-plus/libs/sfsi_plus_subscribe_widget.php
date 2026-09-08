@@ -273,7 +273,7 @@ function sfsi_plus_get_subscriberForm() {
 			<h5>'.trim( $option9['sfsi_plus_form_heading_text'] ).'</h5>
 			<div class="sfsi_plus_subscription_form_field">
 				<input type="hidden" name="action" value="followPub">
-				<input type="email" name="email" value="" placeholder="' . trim( $option9['sfsi_plus_form_field_text'] ) . '" />
+				<input type="email" name="email" value="" placeholder="' . esc_attr( trim( $option9['sfsi_plus_form_field_text'] ) ) . '" />
 			</div>
 			<div class="sfsi_plus_subscription_form_field">
 				<input type="submit" name="subscribe" value="' . esc_attr( $option9['sfsi_plus_form_button_text'] ) . '" />

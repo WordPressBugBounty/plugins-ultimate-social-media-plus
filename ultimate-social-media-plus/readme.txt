@@ -2,8 +2,8 @@
 Contributors: socialsharepro, socialtech
 Tags: Share, sharing, share buttons, share button, share social media
 Requires at least: 3.0
-Tested up to: 7.0
-Stable tag: 3.7.3
+Tested up to: 7.1
+Stable tag: 3.7.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -297,197 +297,17 @@ The premium plugin offers many more social buttons from other social media platf
 9. You can also display a pop-up (designed to your liking) which asks users to like & share your site
 
 == Changelog ==
-= 3.7.3 =
-* Tested up to wordpress 7.0
-* Fix fatal error on admin notice view
-* Other improvements
-
-= 3.7.2 =
-* Tested up to wordpress 6.9.4
-* Added threads and bluesky icons
-* Fix fatal error when using certain translations
-* Other improvements
-
-= 3.7.1 =
-* Fixed bug related to Pinterest icons
-* Quality improvements
-* Improved stability
-
-= 3.7.0 =
-* Tested with WordPress 6.7.2
-* Fixes bug cause by missing function
-
-= 3.6.9 =
-* Tested with WordPress 6.7.2
-* Improved icon placement
-* Fixed user reported bugs
-* Improved stability
-
-= 3.6.8 =
-* Refactored YouTube subscribe button to use channel id
-
-= 3.6.7 =
-* Tested with WordPress 6.6.2
-* Aligned new icons for desktop (Copy URL, InHa, RIA)
-* Added necessary issets to add better backward compatibility
-* Slight PHP 8 compatibility improvement
-
-= 3.6.6 =
-* Tested with WordPress 6.6
-* Minor performance improvements 
-* Improvements for PHP 8 utilization
-* Fixed bugs with IncreasingHappiness and RateItAll icons
-
-= 3.6.5 =
-* Added new icons 
-* Improved email filter
-* Tested with WordPress 6.5.3
-* Better calibration of icons  
-* Fixed bugs with icon sizes
-
-= 3.6.4 =
-* Added social network ratItAll
-* Adding social network increasinghappiness
-* Fixed the bug of changing the default color of Twitter to x (blue to black)
-* Change X icon to transparent icon in custom color icons
-* Fixing the bug of icon urls not being empty after saving
-* Fixed a bug in showing the number of Facebook likes and shares
-* Change the default Facebook token
-
-= 3.6.3 =
-* [FIX] Fixed CRS Errors 
-* [FIX] Fixed permissions for settings access, now users with "manage_options" can access the plugin
-* [FIX] Fixed issue with sfsi_plus_hide_admin_forum_notification action. 
-* [NOTE] Tested with WordPress v6.4.3
-
-= 3.6.2 =
-* [NEW] Improved look of Dark X icons and buttons
-* [NEW] Refactored code of facebook share/likes API
-* [FIX] Adjusted text of "Tweet" -> "Post on X" where needed
-* [FIX] Adjusted X icon position on desktop screens
-* [NOTE] Upgraded "TryItOut" module to latest version
-* [NOTE] Upgraded analyst module to latest version
-* [NOTE] Tested with WordPress v6.4.2
-* [NOTE] Tested up to PHP v8.3
-
-= 3.6.1 =
-* Fixed issue with rendering of external module
-
-= 3.6.0 =
-* Tested with WordPress 6.4-beta & PHP 8.2
-* Now icons are disabled in page builders
-* Replaced twitter icon with X
-* Changed default colors for X
-* Updated promotion module
-* Minor improvements for all icons rendering 
-* Updated carrousel module for PHP 8.2 and resolved conflicts
-* Improved overall compatibility with PHP 8.2
-* Fixed warnings in PHP 8+ with mastodon icon
-* Now mastodon icon order will be correct
-
-= 3.5.9 =
-* Forced "Try it out" module to be disabled by default, user can still enable it manually.
-
-= 3.5.8 =
-* Tested with WP 6.3
-* Added mastodon icons and support
-* Fixed display bugs
-* Adjusted plugin compatibility with third-party plugins
-* Rephrased some sentences for easier read and fixed typos
-* Removed unused modules
-* Updated all submodules to their latest versions
-
-= 3.5.7 =
-* Adjusted PHP compatibility
-
-= 3.5.6 =
-* Added black-friday theme (only for that period)
-* Tested up to WordPress 6.1.1
-
-= 3.5.5 =
-* Minor bug fixes and improvements
-
-= 3.5.4 =
-* Added TasteWP Integration
-
-= 3.5.3 =
-* Added support for no-opener tag on links
-* Added support for twitter:image tag
-
-= 3.5.2 =
-* Fixed an issue of plugin breaking the widget page
-
-= 3.5.1 =
-* New: Added Background color option for Flat icon style
-* New: Added a new tab "Get advice for more shares & traffic"
-* Updated to WordPress 5.9 compatibility.
-* Update Facebook API
-* Update Footer banner
-* Fix Telegram order issue
-* Fix admin chat popup issue
-* Some minor fixes
-
-= 3.5.0 =
-* Updated to WordPress 5.8.1 compatibility.
-* Optimize code
-* Remove unused images
-* Add/update Translation functions
-* Some minor fixes
-
-= 3.4.9 =
-* Updated to WordPress 5.7.2 compatibility.
-* Change unserialize to maybe_unserialize
-* Added target attribute in Facebook and X/Twitter sharing links
-* Update Instagram icons
-* Some minor fixes
-
-= 3.4.8 =
-* Banner & Footer Carousel
-* Fixes with translated WordPress
-
-= 3.4.7 =
-* Updated to WordPress 5.6 compatibility.
-* Updated to PHP 8 compatibility.
-
-= 3.4.6 =
-* Fixed banner.
-
-= 3.4.5 =
-* Added Whatsapp share
-* Fixed WooCommerce banner dismiss
-
-= 3.4.4 =
-* Gutenberg corrected.
-* The permission callback for register_rest_route issue fixed.
-* The jQuery load function issue fixed.
-
-= 3.4.3 =
-* UI fixes.
-* Banner changes.
-* Removed comment for false warning from security plugins.
-* Compatablity with 5.5
-
-= 3.4.2 =
-* Update the banner to show less frequently
-
-= 3.4.0 =
-* Removed banner options
-
-= 3.3.9 =
-* Subscription fallback Url issue fixed
-
-= 3.3.8 =
-* Plugin url fixes
-* Updated youtube API ID
-
-= 3.3.7 =
-* Popup skip error solved
-* Corrected a banner
-
-** Changelog truncated due to WordPress 5000-character limit.
+= 3.7.4 =
+* Tested upto WordPress 7.1
+* [ENHANCEMENT] Updated Facebook Graph API integration to v26.0 for continued compatibility.
+* [ENHANCEMENT] Removed the discontinued Facebook Like Button.
+* [SECURITY] Escaped values interpolated into inline event handlers to prevent potential XSS vulnerabilities.
+* [SECURITY] Fixed XSS vulnerabilities in share icons by properly escaping generated output.
 
 == Upgrade Notice ==
-= 3.7.3 =
-* Tested up to wordpress 7.0
-* Fix fatal error on admin notice view
-* Other improvements
+= 3.7.4 =
+* Tested upto WordPress 7.0.4
+* [ENHANCEMENT] Updated Facebook Graph API integration to v26.0 for continued compatibility.
+* [ENHANCEMENT] Removed the discontinued Facebook Like Button.
+* [SECURITY] Escaped values interpolated into inline event handlers to prevent potential XSS vulnerabilities.
+* [SECURITY] Fixed XSS vulnerabilities in share icons by properly escaping generated output.

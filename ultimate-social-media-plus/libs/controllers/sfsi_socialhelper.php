@@ -65,7 +65,7 @@ class sfsi_plus_SocialHelper
         $option4 = maybe_unserialize( get_option( 'sfsi_plus_section4_options', false ) );
 
         if (!$lastUpdate || (isset( $option4['sfsi_plus_facebook_enableCache']) && $option4['sfsi_plus_facebook_enableCache'] == 'no') ) {
-            $json_string = $this->file_get_contents_curl( 'https://graph.facebook.com/v12.0/?id='.$url."&fields=engagement&access_token=".$appid.'|'.$appsecret, true );
+            $json_string = $this->file_get_contents_curl( 'https://graph.facebook.com/'.SFSI_PLUS_FB_GRAPH_VERSION.'/?id='.$url."&fields=engagement&access_token=".$appid.'|'.$appsecret, true );
             $json = json_decode( $json_string );
             if( isset( $json ) && isset( $json->engagement ) ) {
                 if ($return_json){
@@ -86,7 +86,7 @@ class sfsi_plus_SocialHelper
             $dif = time() - $lastUpdate;
             if ($dif > 86400)
             {
-                $json_string = $this->file_get_contents_curl( 'https://graph.facebook.com/v12.0/?id='.$url."&fields=engagement&access_token=".$appid.'|'.$appsecret, true );
+                $json_string = $this->file_get_contents_curl( 'https://graph.facebook.com/'.SFSI_PLUS_FB_GRAPH_VERSION.'/?id='.$url."&fields=engagement&access_token=".$appid.'|'.$appsecret, true );
                 $json = json_decode( $json_string );
                 if( isset( $json ) && isset( $json->engagement ) ) {
                     if ($return_json){
@@ -126,7 +126,7 @@ class sfsi_plus_SocialHelper
 
         $option4 = maybe_unserialize( get_option( 'sfsi_section4_options', false ) );
         if (!$lastUpdate || !isset( $option4['sfsi_facebook_enableCache']) || $option4['sfsi_facebook_enableCache'] == 'no') {
-            $json_url = 'https://graph.facebook.com/v18.0/' . $url . '?fields=fan_count&access_token=' . $appid . '|' . $appsecret;
+            $json_url = 'https://graph.facebook.com/' . SFSI_PLUS_FB_GRAPH_VERSION . '/' . $url . '?fields=fan_count&access_token=' . $appid . '|' . $appsecret;
             $json_string = $this->file_get_contents_curl($json_url, true);
 
             $json = json_decode($json_string, true);
@@ -155,7 +155,7 @@ class sfsi_plus_SocialHelper
         $lastUpdate = get_option('sfsi_plus_last_update_facebook');
         $option4 = maybe_unserialize( get_option( 'sfsi_section4_options', false ) );
         if (!$lastUpdate || !isset( $option4['sfsi_facebook_enableCache']) || $option4['sfsi_facebook_enableCache'] == 'no') {
-            $json_string = $this->file_get_contents_curl( 'https://graph.facebook.com/?id='.$url."&fields=engagement&access_token=".$appid.'|'.$appsecret, true );
+            $json_string = $this->file_get_contents_curl( 'https://graph.facebook.com/'.SFSI_PLUS_FB_GRAPH_VERSION.'/?id='.$url."&fields=engagement&access_token=".$appid.'|'.$appsecret, true );
             $json 		 = json_decode( $json_string );
             if( isset( $json ) && isset( $json->engagement ) ) {
                 $count = $json->engagement->share_count + $json->engagement->reaction_count + $json->engagement->comment_count +  $json->engagement->comment_plugin_count;
@@ -349,26 +349,11 @@ class sfsi_plus_SocialHelper
 		return $n;
 	}
 
-	/* create on page facebook links option */
+	/* Meta discontinued the Facebook Like Button on 10 February 2026. It renders as an
+	   invisible element and has no replacement, so nothing is emitted for it. The share
+	   button, built by sfsiFB_Share(), is unaffected. */
 	public function sfsi_plus_FBlike( $permalink, $show_count = '' ) {
-
-        $permalink = trailingslashit($permalink);
-
-        $permalink = rawurlencode(esc_url(rawurldecode($permalink))); /* XSS Vulnerability */
-
-        $fb_like_html = '<div class="fb-like" data-width="180" data-show-faces="false" data-href="' . $permalink . '"';
-
-        if ($show_count == 1) {
-            $fb_like_html .= ' data-layout="button_count"';
-        } else {
-            $fb_like_html .= ' data-layout="button"';
-        }
-        $fb_like_html .= ' data-action="like" data-share="false" ></div>';
-        return $fb_like_html;
-//
-//		$fb_like_html = '<div class="fb-like" data-href="'.$permalink.'" data-width="180" data-show-faces="false" data-layout="button" data-action="like"></div>';
-//		return $fb_like_html;
-		exit;
+		return '';
 	}
 
 	// /*subscribe like*/
@@ -431,8 +416,9 @@ class sfsi_plus_SocialHelper
 		// $tweet_icon = SFSI_PLUS_PLUGURL . 'images/visit_icons/'".$icons_language."'.svg';
 
 
+		$twitter_share_url = "https://x.com/intent/post?text=" . urlencode($tweettext) . ' ' . urlencode($permalink);
 		$twitter_html = "<div class='sf_twiter' style='display: inline-block;vertical-align: middle;width: auto;'>
-						<a target='_blank' href='https://x.com/intent/post?text=" . urlencode($tweettext).' '.$permalink. "'style='display:inline-block' >
+						<a target='_blank' href='" . esc_url($twitter_share_url) . "' style='display:inline-block' >
 							<img nopin=nopin width='auto' class='sfsi_plus_wicon' src='" . $tweet_icon . "' alt='Tweet' title='Tweet' >
 						</a>
 					</div>";
@@ -768,7 +754,7 @@ class sfsi_plus_SocialHelper
 
 
         // Build the anchor tag with proper escaping
-        return "<a data-pin-custom='true' href='https://www.pinterest.com/pin/create/button/?url={$encoded_url}' " . sfsi_plus_checkNewWindow($url) . "><img class='sfsi_wicon' data-pin-nopin='true' alt='fb-share-icon' title='Pin Share' src='" . $icon . "' /></a>";
+        return "<a data-pin-custom='true' href='" . esc_url("https://www.pinterest.com/pin/create/button/?url=" . $encoded_url) . "' " . sfsi_plus_checkNewWindow($url) . "><img class='sfsi_wicon' data-pin-nopin='true' alt='fb-share-icon' title='Pin Share' src='" . $icon . "' /></a>";
     }
 
 

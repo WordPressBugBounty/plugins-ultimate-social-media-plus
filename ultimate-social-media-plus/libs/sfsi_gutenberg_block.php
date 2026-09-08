@@ -94,10 +94,12 @@ add_action( 'rest_api_init', 'sfsi_plus_register_icon_route');
 
 function sfsi_plus_render_shortcode(){
     ob_start();
+    $share_url = isset($_GET['share_url']) ? esc_url_raw( wp_unslash( $_GET['share_url'] ) ) : null;
+    $admin_refereal = isset($_GET['admin_refereal']) ? sanitize_text_field( wp_unslash( $_GET['admin_refereal'] ) ) : null;
     if(isset($_GET['ractangle_icon']) && 1==$_GET['ractangle_icon']){
-        $returndata=sfsi_plus_render_gutenberg_rectangle(null,null,isset($_GET['share_url'])?$_GET['share_url']:home_url());
+        $returndata=sfsi_plus_render_gutenberg_rectangle(null,null,(null !== $share_url ? $share_url : home_url()));
     }else{
-        $returndata=sfsi_plus_render_gutenberg_round(null,null,isset($_GET['share_url'])?$_GET['share_url']:null,isset($_GET['admin_refereal'])?$_GET['admin_refereal']:null );
+        $returndata=sfsi_plus_render_gutenberg_round(null,null,$share_url,$admin_refereal);
     }
     ob_clean();
     return rest_ensure_response($returndata);
@@ -222,11 +224,6 @@ function sfsi_plus_render_gutenberg_rectangle($args = null, $content = null,$sha
                     if($show_count){$sfsiLikeWithsub = "93px";}else{$sfsiLikeWithsub = "64px";}
                     if(!isset($sfsiLikeWithsub)){$sfsiLikeWithsub = $sfsiLikeWith;}
                     $icons.="<div class='sf_subscrbe' style='display: inline-block;vertical-align: middle;width: auto;'>".sfsi_plus_Subscribelike($permalink,$show_count)."</div>";
-                }
-                if( $sfsi_section8['sfsi_plus_rectfb'] == 'yes' || $sfsi_section8['sfsi_plus_rectfbshare'] == 'yes' ) {
-                    if($show_count){}else{$sfsiLikeWithfb = "48px";}
-                    if(!isset($sfsiLikeWithfb)){$sfsiLikeWithfb = $sfsiLikeWith;}
-                    $icons.="<div class='sf_fb' style='display: inline-block;vertical-align: middle;width: auto;'>".sfsi_plus_FBlike($permalink,$show_count)."</div>";
                 }
 
                 if ( $sfsi_section8['sfsi_plus_rectfbshare'] == 'yes' ) {

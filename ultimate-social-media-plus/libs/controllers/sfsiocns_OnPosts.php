@@ -62,7 +62,7 @@ function sfsi_plus_social_buttons_below($content)
 
 	$mouse_hover_effect = sfsi_plus_mouseOver_effect_classlist();
 	$icons = "<div class='sfsi_plus_Sicons " . $float . $mouse_hover_effect."' style='" . $style . "'>";
-	if ($sfsi_section8['sfsi_plus_rectsub'] == 'yes' || $sfsi_section8['sfsi_plus_rectfb'] == 'yes' || $sfsi_section8['sfsi_plus_recttwtr'] == 'yes' || $sfsi_section8['sfsi_plus_rectpinit'] == 'yes' || $sfsi_section8['sfsi_plus_rectfbshare'] == 'yes') {
+	if ($sfsi_section8['sfsi_plus_rectsub'] == 'yes' || $sfsi_section8['sfsi_plus_recttwtr'] == 'yes' || $sfsi_section8['sfsi_plus_rectpinit'] == 'yes' || $sfsi_section8['sfsi_plus_rectfbshare'] == 'yes') {
 		$icons .= "<div class='sfsi_plus_Sicons_text_wrapper' style='display: inline-block;margin-bottom: 0; margin-left: 0; margin-right: 8px; margin-top: 0; vertical-align: middle;width: auto;'><span>" . $txt . "</span></div>";
 	}
 	if ($sfsi_section8['sfsi_plus_rectsub'] == 'yes') {
@@ -75,9 +75,6 @@ function sfsi_plus_social_buttons_below($content)
 			$sfsiLikeWithsub = $sfsiLikeWith;
 		}
 		$icons .= "<div class='sf_subscrbe' style='display: inline-block;vertical-align: middle;width: auto;'>" . sfsi_plus_Subscribelike($permalink, $show_count) . "</div>";
-	}
-	if ($sfsi_section8['sfsi_plus_rectfb'] == 'yes' ) {
-		$icons .= "<div class='sf_fb' style='display: inline-block;vertical-align: middle;width: auto;'>" . sfsi_plus_FBlike($permalink, $show_count) . "</div>";
 	}
 
 	if ($sfsi_section8['sfsi_plus_rectfbshare'] == 'yes' ) {
@@ -262,25 +259,12 @@ function sfsi_twitterShare( $permalink, $tweettext, $wrapper_div='yes' ) {
 // $twitter_html = '<a rel="nofollow" href="https://x.com/intent/post" data-count="none" class="sr-twitter-button twitter-share-button" data-lang="'.$icons_language.'" data-url="'.$permalink.'" data-text="'.stripslashes($tweettext).'" ></a>';
 //  return $twitter_html;
 
-/* create fb like button */
+/* Meta discontinued the Facebook Like Button on 10 February 2026. It renders as an
+   invisible element and has no replacement, so nothing is emitted for it. The share
+   button, built by sfsi_plus_FBshare(), is unaffected. */
 function sfsi_plus_FBlike($permalink, $show_count)
 {
-    $send = 'false';
-	$width = 180;
-
-	$fb_like_html = '';
-
-	$fb_like_html .= '<div class="fb-like" data-href="' . $permalink . '" data-action="like" data-size="small" data-show-faces="false" data-share="false"';
-
-	if (1 == $show_count) {
-		$fb_like_html .= ' data-layout="button_count"';
-	} else {
-		$fb_like_html .= ' data-layout="button"';
-	}
-
-	$fb_like_html .= ' ></div>';
-
-	return $fb_like_html;
+	return '';
 }
 
 function sfsi_plus_FBshare($permalink, $show_count)
@@ -358,26 +342,16 @@ function sfsi_plus_footer_script()
 	}
 	$common_options_check = (
 		($sfsi_section8['sfsi_plus_show_via_widget'] == "yes") || ($sfsi_section8['sfsi_plus_float_on_page'] == "yes") || (isset($sfsi_section8['sfsi_plus_float_page_position']) && "yes" == $sfsi_section8['sfsi_plus_float_page_position']) || ($sfsi_section8['sfsi_plus_place_item_manually'] == "yes") || (isset($sfsi_section8['sfsi_plus_place_item_gutenberg']) && $sfsi_section8['sfsi_plus_place_item_gutenberg'] == "no") || (isset($sfsi_section8['sfsi_plus_show_item_onposts']) && "yes" == $sfsi_section8['sfsi_plus_show_item_onposts'] && (isset($sfsi_section8["sfsi_plus_display_button_type"])) && "normal_button" == $sfsi_section8["sfsi_plus_display_button_type"] && ($sfsi_section4["sfsi_plus_round_counts"] == "yes")));
+	/* This condition names the Facebook icon options while the only script left in the
+	   block is pinit.js, which the custom Pin It button needs. Pointing it at the
+	   Pinterest options instead would load pinit.js on a different set of pages. */
 	if (
 		($sfsi_section8['sfsi_plus_rectfb'] == "yes" &&
 			$sfsi_section8['sfsi_plus_show_item_onposts'] == "yes" &&
 			$sfsi_section8['sfsi_plus_display_button_type'] == "standard_buttons")
 		|| ($sfsi_section1['sfsi_plus_facebook_display'] == "yes" && ($sfsi_section2['sfsi_plus_facebookLike_option'] == "yes") && $common_options_check)
 	) { ?>
-		<!--facebook like and share js -->
         <script async defer type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
-        <div id="fb-root"></div>
-
-		<script>
-			(function(d, s, id) {
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id)) return;
-				js = d.createElement(s);
-				js.id = id;
-				js.src = "//connect.facebook.net/<?php echo $icons_language; ?>/sdk.js#xfbml=1&version=v2.5";
-				fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
-		</script>
 	<?php
 		}
 		$isYoutubeFollowFeatureActive = ("yes" == $sfsi_section2['sfsi_plus_youtube_follow']) && (isset($sfsi_section2['sfsi_plus_youtubeusernameorid']) &&

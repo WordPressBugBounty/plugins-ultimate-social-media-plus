@@ -693,15 +693,14 @@ function sfsi_plus_prepairIcons($icon_name, $is_front = 0, $onpost = "no", $from
 
             $url = ($sfsi_plus_section2_options['sfsi_plus_facebookPage_url']) ? $sfsi_plus_section2_options['sfsi_plus_facebookPage_url'] : 'javascript:void(0);';
 
-            if ($sfsi_plus_section2_options['sfsi_plus_facebookLike_option'] == "yes" || $sfsi_plus_section2_options['sfsi_plus_facebookShare_option'] == "yes") {
+            /* The like button used to open this tooltip too, but Meta discontinued it on
+               10 February 2026, so the share button is the only thing left to show in it. */
+            if ($sfsi_plus_section2_options['sfsi_plus_facebookShare_option'] == "yes") {
                 $url = ($sfsi_plus_section2_options['sfsi_plus_facebookPage_url']) ? $sfsi_plus_section2_options['sfsi_plus_facebookPage_url'] : 'javascript:void(0);';
                 $hoverSHow = 1;
                 $hoverdiv = '';
                 if ($sfsi_plus_section2_options['sfsi_plus_facebookPage_option'] == "yes") {
                     $hoverdiv .= "<div  class='icon1'><a href='" . $url . "' " . sfsi_plus_checkNewWindow($url) . "><img class='sfsi_plus_wicon' alt='" . $alt_text . "' title='" . $alt_text . "' src='" . $visit_icon . "'  /></a></div>";
-                }
-                if ($sfsi_plus_section2_options['sfsi_plus_facebookLike_option'] == "yes") {
-                    $hoverdiv .= "<div  class='icon2'>" . $socialObj->sfsi_plus_FBlike($current_url, $show_count) . "</div>";
                 }
                 if ($sfsi_plus_section2_options['sfsi_plus_facebookShare_option'] == "yes") {
                     $hoverdiv .= "<div  class='icon3'>" . $socialObj->sfsiFB_Share($current_url) . "</div>";
@@ -1075,7 +1074,7 @@ function sfsi_plus_prepairIcons($icon_name, $is_front = 0, $onpost = "no", $from
 	        $arsfsiplus_row_class = "bot_pintst_arow";
 
 	        if (isset($sfsi_plus_section2_options['sfsi_plus_threads_share']) && $sfsi_plus_section2_options['sfsi_plus_threads_share'] == "yes") {
-		        $url = "https://www.threads.net/intent/post?text=Check%20out%20this%20amazing%20article!&url={$current_url}";
+		        $url = "https://www.threads.net/intent/post?text=Check%20out%20this%20amazing%20article!&url=" . urlencode($current_url);
 	        }
 
 	        //Giving alternative text to image
@@ -1122,7 +1121,7 @@ function sfsi_plus_prepairIcons($icon_name, $is_front = 0, $onpost = "no", $from
 	        $socialObj = new sfsi_plus_SocialHelper(); /* global object to access 3rd party icon's actions */
 
 	        if ( isset( $sfsi_plus_section2_options['sfsi_plus_bluesky_share'] ) && $sfsi_plus_section2_options['sfsi_plus_bluesky_share'] == "yes" ) {
-		        $url = "https://bsky.app/intent/compose?text=Check%20out%20this%20amazing%20article!%20{$current_url}";
+		        $url = "https://bsky.app/intent/compose?text=Check%20out%20this%20amazing%20article!%20" . urlencode($current_url);
 	        }
 
 	        $hoverdiv = "";
@@ -1236,7 +1235,7 @@ function sfsi_plus_prepairIcons($icon_name, $is_front = 0, $onpost = "no", $from
                     $linkedIn_icons_lang = isset($option5['sfsi_plus_linkedin_icons_language']) ? $option5['sfsi_plus_linkedin_icons_language'] : 'en_US';
                     $linkedin_share_icon = SFSI_PLUS_PLUGURL . "images/share_icons/Linkedin_Share/" . $linkedIn_icons_lang . "_share.svg";
                     // $current_url = $socialObj->sfsi_get_custom_share_link('linkedin');
-                    $hoverdiv .= "<div  class='icon2'><a " . sfsi_plus_checkNewWindow($url) . " href='https://www.linkedin.com/shareArticle?url=" . $current_url . "'><img class='sfsi_premium_wicon' nopin=nopin alt='Share' title='Share' src='" . $linkedin_share_icon . "'  /></a></div>";
+                    $hoverdiv .= "<div  class='icon2'><a " . sfsi_plus_checkNewWindow($url) . " href='" . esc_url("https://www.linkedin.com/shareArticle?url=" . $current_url) . "'><img class='sfsi_premium_wicon' nopin=nopin alt='Share' title='Share' src='" . $linkedin_share_icon . "'  /></a></div>";
                     // $hoverdiv.="<div  class='icon2'>".$socialObj->sfsi_LinkedInShare($current_url)."</div>";
                 }
                 if ($sfsi_plus_section2_options['sfsi_plus_linkedin_recommendBusines'] == "yes") {
@@ -1828,7 +1827,7 @@ function sfsi_plus_prepairIcons($icon_name, $is_front = 0, $onpost = "no", $from
     }
 
     if ($sfsi_plus_icon_bgColor) {
-        $sfsi_plus_icon_bgColor_style = "background:" . $sfsi_plus_icon_bgColor . ";";
+        $sfsi_plus_icon_bgColor_style = "background:" . esc_attr($sfsi_plus_icon_bgColor) . ";";
     }
 
 
@@ -1838,15 +1837,15 @@ function sfsi_plus_prepairIcons($icon_name, $is_front = 0, $onpost = "no", $from
         $icons .= "<div class='sfsiplus_inerCnt'>";
 
 	    $icons .= "<a class='" . $class . " sficn1' 
-                        data-effect='" . $mouse_hover_effect . "' 
+                        data-effect='" . esc_attr($mouse_hover_effect) . "' 
                         " . $new_window . "  
-                        href='" . $url . "'  
+                        href='" . esc_attr($url) . "'  
                         style='width: " . $icon_width . "px;height: " . $icon_width . "px;opacity: " . $icon_opacity . ";
                             " . $sfsi_plus_icon_bgColor_style . "'
-                        " . ((isset($sfsi_onclick) && $icon_name=='wechat') ? 'ontouchstart="' . $sfsi_onclick . '"' : '') . "
-                        " . (isset($sfsi_onclick) ? 'onclick="' . $sfsi_onclick . '"' : '') . ">
+                        " . ((isset($sfsi_onclick) && $icon_name=='wechat') ? 'ontouchstart="' . esc_attr($sfsi_onclick) . '"' : '') . "
+                        " . (isset($sfsi_onclick) ? 'onclick="' . esc_attr($sfsi_onclick) . '"' : '') . ">
                     ";
-        $icons .= "<img alt='" . $alt_text . "' title='" . $alt_text . "' src='" . $icon . "' width='" . $icons_size . "' height='" . $icons_size . "' style='" . $border_radius . $padding_top . "' class='sfcm sfsi_wicon sfsiplusid_round_icon_" . $icon_name . "' data-effect='" . $mouse_hover_effect . "'  />";
+        $icons .= "<img alt='" . esc_attr($alt_text) . "' title='" . esc_attr($alt_text) . "' src='" . $icon . "' width='" . $icons_size . "' height='" . $icons_size . "' style='" . $border_radius . $padding_top . "' class='sfcm sfsi_wicon sfsiplusid_round_icon_" . $icon_name . "' data-effect='" . esc_attr($mouse_hover_effect) . "'  />";
 
         $icons .= '</a>';
 
