@@ -543,7 +543,7 @@ function sfsi_plus_wechat_share_mobile(url) {
                    <a class='close_btn' href='' onclick="event.preventDefault();close_overlay('.sfsi_plus_wechat_follow_overlay')" style='position:absolute; top:10px; right:15px; width:24px; height:24px; display:flex; align-items:center; justify-content:center; font-size:24px; color:#999; text-decoration:none;'>&times;</a>
                    <div style='width:95%; min-height:80%; background-color:#fff; margin:20% auto; padding:20px 0;'>
                         <div style='width:90%; margin:0 auto;'>
-                            <input type='text' value='${encodeURI(decodeURI(window.location.href))}' style='width:95%; padding:10px; text-align:center; border:1px solid #ccc; font-size:14px;' />
+                            <input type='text' value='' style='width:95%; padding:10px; text-align:center; border:1px solid #ccc; font-size:14px;' />
                         </div>
                         <div style='width:80%; margin:20px auto 0; display:flex; justify-content:space-between; gap:10px;'>
                             <button onclick='sfsi_copy_text_parent_input(event)' style='flex:1; padding:5px 0; background:#07C160; color:white; border:none; font-size:14px; cursor:pointer;'>Copy</button>
@@ -554,6 +554,8 @@ function sfsi_plus_wechat_share_mobile(url) {
             </div>
         `;
         jQuery('body').append(overlayContent);
+        // Set the URL through the DOM, not the HTML string: a quote in the query string would otherwise close the value attribute and inject attributes.
+        jQuery('.sfsi_plus_wechat_follow_overlay input').val(encodeURI(decodeURI(window.location.href)));
     } else {
         jQuery('.sfsi_plus_wechat_follow_overlay').removeClass('hide').addClass('show');
     }

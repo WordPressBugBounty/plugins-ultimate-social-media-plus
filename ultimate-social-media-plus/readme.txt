@@ -3,7 +3,7 @@ Contributors: socialsharepro, socialtech
 Tags: Share, sharing, share buttons, share button, share social media
 Requires at least: 3.0
 Tested up to: 7.1
-Stable tag: 3.7.4
+Stable tag: 3.7.5
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -297,17 +297,13 @@ The premium plugin offers many more social buttons from other social media platf
 9. You can also display a pop-up (designed to your liking) which asks users to like & share your site
 
 == Changelog ==
-= 3.7.4 =
+= 3.7.5 =
 * Tested upto WordPress 7.1
-* [ENHANCEMENT] Updated Facebook Graph API integration to v26.0 for continued compatibility.
-* [ENHANCEMENT] Removed the discontinued Facebook Like Button.
-* [SECURITY] Escaped values interpolated into inline event handlers to prevent potential XSS vulnerabilities.
-* [SECURITY] Fixed XSS vulnerabilities in share icons by properly escaping generated output.
+* [SECURITY] WeChat icons security fix.
+* [OTHER] Other fixes
 
 == Upgrade Notice ==
-= 3.7.4 =
-* Tested upto WordPress 7.0.4
-* [ENHANCEMENT] Updated Facebook Graph API integration to v26.0 for continued compatibility.
-* [ENHANCEMENT] Removed the discontinued Facebook Like Button.
-* [SECURITY] Escaped values interpolated into inline event handlers to prevent potential XSS vulnerabilities.
-* [SECURITY] Fixed XSS vulnerabilities in share icons by properly escaping generated output.
+= 3.7.5 =
+* Tested upto WordPress 7.1
+* [SECURITY] WeChat icons security fix.
+* [OTHER] Other fixes
