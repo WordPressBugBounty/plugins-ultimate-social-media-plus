@@ -244,7 +244,7 @@ function sfsi_twitterShare( $permalink, $tweettext, $wrapper_div='yes' ) {
 	if ( 'yes' === $wrapper_div ) {
 		$twitter_html .= "<div class='sf_twiter' style='display: inline-block;vertical-align: middle;width: auto;'>";
 	}
-	$twitter_html .= "<a target='_blank' href='https://x.com/intent/post?text=" . urlencode($tweettext) . ' ' . $permalink . "'style='display:inline-block' >
+	$twitter_html .= "<a target='_blank' href='" . esc_url( "https://x.com/intent/post?text=" . urlencode( $tweettext ) . ' ' . urlencode( $permalink ) ) . "' style='display:inline-block' >
 			<img nopin=nopin width='auto' class='sfsi_plus_wicon' src='" . $tweet_icon . "' alt='Tweet' title='Tweet' />
 		</a>";
 	if ( 'yes' === $wrapper_div ) {

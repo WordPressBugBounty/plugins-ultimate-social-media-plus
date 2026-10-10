@@ -7,7 +7,7 @@ Author: social share pro
 Text Domain: ultimate-social-media-plus
 Domain Path: /languages
 Author URI: http://socialshare.pro/
-Version: 3.7.5
+Version: 3.7.6
 License: GPLv2
 */
 
@@ -59,7 +59,7 @@ if (!is_plugin_active('Ultimate-Premium-Plugin/usm_premium_icons.php')) {
 
 	global $wpdb;
 	/* define the Root for URL and Document */
-	define( 'SFSI_PLUS_PLUGIN_VERSION', '3.7.5' );
+	define( 'SFSI_PLUS_PLUGIN_VERSION', '3.7.6' );
 
 	/* Graph API version used by every graph.facebook.com call. Meta retires a version
 	   about two years after release; v26.0 was released 29 July 2026. A call naming a

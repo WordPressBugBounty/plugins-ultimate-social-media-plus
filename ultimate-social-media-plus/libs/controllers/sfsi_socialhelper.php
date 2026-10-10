@@ -435,11 +435,11 @@ class sfsi_plus_SocialHelper
 	{
 		if($show_count)
 		{
-			$twitter_html = '<a href="https://x.com/intent/post" class="sr-twitter-button twitter-share-button" lang="'.$icons_language.'" data-counturl="'.$permalink.'" data-url="'.$permalink.'" data-text="'.stripslashes($tweettext).'" ></a>';
+			$twitter_html = '<a href="https://x.com/intent/post" class="sr-twitter-button twitter-share-button" lang="'.$icons_language.'" data-counturl="'.esc_url($permalink).'" data-url="'.esc_url($permalink).'" data-text="'.esc_attr(stripslashes($tweettext)).'" ></a>';
 		}
 		else
 		{
-			$twitter_html = '<a href="https://x.com/intent/post" data-count="none" class="sr-twitter-button twitter-share-button" lang="'.$icons_language.'" data-url="'.$permalink.'" data-text="'.stripslashes($tweettext).'" ></a>';
+			$twitter_html = '<a href="https://x.com/intent/post" data-count="none" class="sr-twitter-button twitter-share-button" lang="'.$icons_language.'" data-url="'.esc_url($permalink).'" data-text="'.esc_attr(stripslashes($tweettext)).'" ></a>';
 		}
 	   	return $twitter_html;
 	}
@@ -551,7 +551,7 @@ class sfsi_plus_SocialHelper
   	public function sfsi_LinkedInShare($url='')
  	{
     	$url=(isset($url))? $url :  home_url();
-      	return  $ifollow='<script type="IN/Share" data-url="'.$url.'"></script>';
+      	return  $ifollow='<script type="IN/Share" data-url="'.esc_url($url).'"></script>';
  	}
  	
 	/* get no of subscribers from specific feeds for current blog */
